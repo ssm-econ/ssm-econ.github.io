@@ -9,10 +9,6 @@ redirect_from:
 ---
 I am a Economics PhD student in my third year at UT Austin. I am interested in expectations formation in markets, monetary policy and heterogenous agent models. I also enjoy working on problems in time-series analysis and bayesian econometrics. These days, I also spend my time trying to apply insights from Reinforcement Learning literature to macroeconomic policy. 
 
-A data-driven personal website
-======
-I am striving to bring latest developments in the machine learning and causal inference literature to the study of macroeconomics.
-
 
 My background
 ======
