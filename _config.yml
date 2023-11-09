@@ -11,9 +11,9 @@ title                    : "Personal Website"
 title_separator          : "-"
 name                     : &name "Shreeyesh Menon"
 description              : &description "Econ PhD Student @ UT Austin"
-url                      : https://ssm-utecon.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
+url                      : https://ssm-econ.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
-repository               : "ssm-utecon/ssm-utecon.github.io"
+repository               : "ssm-econ/ssm-econ.github.io"
 teaser                   :  # filename of teaser fallback teaser image placed in /images/, .e.g. "500x300.png"
 breadcrumbs              : false # true, false (default)
 words_per_minute         : 160
@@ -95,7 +95,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "ssm-utecon"
+  github           : "ssm-econ"
   google_plus      :
   keybase          :
   instagram        :
