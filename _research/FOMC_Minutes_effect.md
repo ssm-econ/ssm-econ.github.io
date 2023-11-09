@@ -1,7 +1,7 @@
 ---
 title: "The FOMC Minutes effect - July 2022"
 collection: research
-permalink: /researc/FOMC_Minutes_Effect
+permalink: /research/FOMC_Minutes_Effect
 excerpt: 
 date: 2022-07-11
 venue: 
