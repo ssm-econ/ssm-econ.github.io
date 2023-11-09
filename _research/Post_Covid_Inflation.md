@@ -3,7 +3,7 @@ title: "Post-COVID Inflation and Central Bank Beliefs - Nov 2023"
 collection: research
 permalink: /research/Post_Covid_Inflation
 excerpt: 
-date: 
+date: 2023-11-08
 venue: 
 paperurl: 
 citation: 

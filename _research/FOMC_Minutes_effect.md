@@ -3,7 +3,7 @@ title: "The FOMC Minutes effect - July 2022"
 collection: research
 permalink: /research/FOMC_Minutes_Effect
 excerpt: 
-date: 
+date: 2022-07-23
 venue: 
 paperurl: 'http://ssm-econ.github.io/files/FOMC_Minutes_effect.pdf'
 citation: 
