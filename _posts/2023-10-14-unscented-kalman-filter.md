@@ -2,6 +2,7 @@
 title: 'The Unscented Kalman Filter'
 date: 2023-10-14
 permalink: /posts/2023/10/unscented-kalman-filter/
+excerpt: "An introduction and overview of the Unscented Kalman Filter"
 tags:
   - state space methods
   - kalman filter
