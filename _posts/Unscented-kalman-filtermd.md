@@ -1,7 +1,7 @@
 ---
 title: 'The Unscented Kalman Filter'
 date: 2023-10-14
-permalink: /posts/2023/10/unscented-kalman-filter/
+permalink: /posts/unscented-kalman-filter/
 tags:
   - state space methods
   - kalman filter
