@@ -54,14 +54,41 @@ def predict_sigma_points(sigma_points, process_function):
 ### Update Step
 
 ```python
+import numpy as np
+
 def ukf_update(predicted_sigma_points, measurement_function, measurement, R):
+    n_sigma_points = predicted_sigma_points.shape[0]
+    n_state_dimensions = predicted_sigma_points.shape[1]
+    n_measurement_dimensions = measurement.shape[0]
+
     # Measurement prediction
-    predicted_measurements = [measurement_function(point) for point in predicted_sigma_points]
+    predicted_measurements = np.array([measurement_function(point) for point in predicted_sigma_points])
     mean_measurement = np.mean(predicted_measurements, axis=0)
-    
-    # Update
-    # ... (additional calculations for the update step)
+
+    # Measurement covariance
+    S = np.zeros((n_measurement_dimensions, n_measurement_dimensions))
+    for z in predicted_measurements:
+        S += np.outer(z - mean_measurement, z - mean_measurement)
+    S /= n_sigma_points
+    S += R  # Add measurement noise covariance
+
+    # Cross-covariance matrix between state and measurements
+    C = np.zeros((n_state_dimensions, n_measurement_dimensions))
+    for i in range(n_sigma_points):
+        C += np.outer(predicted_sigma_points[i] - predicted_sigma_points.mean(axis=0),
+                      predicted_measurements[i] - mean_measurement)
+    C /= n_sigma_points
+
+    # Kalman gain
+    K = C @ np.linalg.inv(S)
+
+    # Update state estimate and covariance
+    mean_state_update = K @ (measurement - mean_measurement)
+    updated_mean = predicted_sigma_points.mean(axis=0) + mean_state_update
+    updated_covariance = C - K @ S @ K.T
+
     return updated_mean, updated_covariance
+
 ```
 
 ## Conclusion
