@@ -1,102 +1,56 @@
 ---
-title: 'The Unscented Kalman Filter'
-date: 2023-10-14
-permalink: /posts/2023/10/unscented-kalman-filter/
-excerpt: "An introduction and overview of the Unscented Kalman Filter"
+title: 'Monte-carlo integration'
+date: 2023-09-07
+permalink: /posts/2023/09/monte-carlo-integration/
+excerpt: "When I first read about it, I was quite amazed that the task of approximating the area under a curve could be performed without really calculating areas at all. And instead, by rolling dice..."
 tags:
   - state space methods
   - kalman filter
   - bayesian inference
 ---
 
-# Understanding the Unscented Kalman Filter
 
-Typically, we apply the Kalman Filter to solve inference problems in linear systems. But the Kalman Filter algorithm can be applied for inference in non-linear systems as well under the assumption of Gaussianity. The catch? A Gaussian remains a Gaussian under a linear transformation but not under a non-linear one. The Extended Kalman Filter does this through the use of Taylor's approximation to linearize the measurement and dynamics equations. However, highly non-linear systems may have unreasonably low tolerance for mis-specification errors. This is where the Unscented Kalman Filter comes handy, where we approximate the latent-state distribution not just using the mean, but a set of carefully chosen points around the mean. 
+# Monte-carlo integration 
+When I first read about it, I was quite amazed that the task of approximating the area under a curve could be performed without really calculating areas at all. And instead, by rolling dice...
 
-## Introduction
+Monte-carlo integration is an ingenious concept. Its simplicity belies its genius. Consider the problem of evaluating the integral of the curve $f(x)$ over the interval $[a,b]$. Assuming that expectations are well-defined, 
+$$\int_a^b f(x) dx = E[f(x)](b-a)$$
 
-The Unscented Kalman Filter (UKF) is an extension of the classic Kalman Filter (KF) used for nonlinear systems. While the KF is suitable for linear systems, the UKF addresses the limitations of the Extended Kalman Filter (EKF) by using a deterministic sampling approach to capture the mean and covariance estimates accurately.
+if x is uniformly distributed over $[a,b]$
 
-## The Unscented Transformation
+We can employ this idea to great effect by combining it with another great theorem from statistics: The law of large numbers.
 
-The core of the UKF is the Unscented Transformation (UT). It involves generating a set of points (sigma points) around the mean. These points are then propagated through the nonlinear functions, from which the new mean and covariance estimates are derived.
+The law of large numbers simply states that the sample mean $\frac{1}{n}\sum_{i=1}^{n} X_i$ converges in probability to the population mean $\mu$ as $n$ approaches infinity.
 
-```python
-import numpy as np
+All we need to do is randomly pick points in the interval such that they are uniformly distributed and evaluate the function over that set. To see this in action, you can use the following code snippet:
 
-def generate_sigma_points(mean, covariance, kappa):
-    n = len(mean)
-    sigma_points = np.zeros((2 * n + 1, n))
-    sigma_points[0] = mean
-    W = np.linalg.cholesky((n + kappa) * covariance)
-    
-    for i in range(n):
-        sigma_points[i + 1] = mean + W[:, i]
-        sigma_points[n + i + 1] = mean - W[:, i]
-    
-    return sigma_points
-```
-
-## Prediction and Update Steps
-
-The UKF consists of two main steps: prediction and update. The prediction step propagates the sigma points through the process model, and the update step adjusts the estimates based on the new measurements.
-
-### Prediction Step
 
 ```python
-def predict_sigma_points(sigma_points, process_function):
-    predicted_sigma_points = []
-    for point in sigma_points:
-        predicted_sigma_points.append(process_function(point))
-    return np.array(predicted_sigma_points)
+import random
+
+# Define the function to be integrated
+def f(x):
+    return x**2
+
+# Define the integration limits
+a = 0
+b = 1
+
+# Number of random samples
+num_samples = 10000
+
+# Initialize the sum
+integral_sum = 0
+
+# Perform Monte Carlo integration
+for _ in range(num_samples):
+    x = random.uniform(a, b)  # Generate a random point in the domain
+    integral_sum += f(x)  # Add the function value at the random point
+
+# Calculate the approximate integral
+integral_approx = (b - a) * (integral_sum / num_samples)
+
+print("Approximate integral:", integral_approx)
+
+Approximate integral: 0.3353692778989746
 ```
-
-### Update Step
-
-```python
-import numpy as np
-
-def ukf_update(predicted_sigma_points, measurement_function, measurement, R):
-    n_sigma_points = predicted_sigma_points.shape[0]
-    n_state_dimensions = predicted_sigma_points.shape[1]
-    n_measurement_dimensions = measurement.shape[0]
-
-    # Measurement prediction
-    predicted_measurements = np.array([measurement_function(point) for point in predicted_sigma_points])
-    mean_measurement = np.mean(predicted_measurements, axis=0)
-
-    # Measurement covariance
-    S = np.zeros((n_measurement_dimensions, n_measurement_dimensions))
-    for z in predicted_measurements:
-        S += np.outer(z - mean_measurement, z - mean_measurement)
-    S /= n_sigma_points
-    S += R  # Add measurement noise covariance
-
-    # Cross-covariance matrix between state and measurements
-    C = np.zeros((n_state_dimensions, n_measurement_dimensions))
-    for i in range(n_sigma_points):
-        C += np.outer(predicted_sigma_points[i] - predicted_sigma_points.mean(axis=0),
-                      predicted_measurements[i] - mean_measurement)
-    C /= n_sigma_points
-
-    # Kalman gain
-    K = C @ np.linalg.inv(S)
-
-    # Update state estimate and covariance
-    mean_state_update = K @ (measurement - mean_measurement)
-    updated_mean = predicted_sigma_points.mean(axis=0) + mean_state_update
-    updated_covariance = C - K @ S @ K.T
-
-    return updated_mean, updated_covariance
-
-```
-
-## Conclusion
-
-The UKF provides a more accurate and robust approach for state estimation in nonlinear systems compared to the EKF. Its ability to handle highly nonlinear dynamics makes it a valuable tool in various fields, from robotics to financial engineering.
-
----
-
-This blog post provides a basic introduction and some code snippets for implementing the Unscented Kalman Filter. Depending on the audience, you might want to expand on each section, provide more detailed examples, or include more complex mathematical explanations.
-
-------
