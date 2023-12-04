@@ -11,5 +11,5 @@ I am a 4th year PhD student in Economics at the University of Texas at Austin. I
 
 Professional footprint
 ======
-![](/files/Timeline.jpg)
+![alt]({{ site.url }}{{ site.baseurl }}/files/filename.jpg)
 
