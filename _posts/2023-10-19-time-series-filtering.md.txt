@@ -9,6 +9,7 @@ tags:
   - bayesian inference
 ---
 
+
 # Time Series: Filtering, and why you shouldn't throw away a noisy sensor
 Simply put, filtering means extracting information from a bunch of noisy signals. 
 
