@@ -1,4 +1,4 @@
----
+﻿---
 title: 'Time Series: Filtering, Or why you shouldn't throw away a noisy sensor'
 date: 2023-10-19
 permalink: /posts/2023/10/filtering/

@@ -1,4 +1,4 @@
----
+﻿---
 title: 'Monte-carlo integration'
 date: 2023-09-07
 permalink: /posts/2023/09/monte-carlo-integration/
@@ -9,8 +9,7 @@ tags:
   - bayesian inference
 ---
 
-
-# Monte-carlo integration 
+# The arcanary of Monte-carlo integration 
 When I first read about it, I was quite amazed that the task of approximating the area under a curve could be performed without really calculating areas at all. And instead, by rolling dice...
 
 Monte-carlo integration is an ingenious concept. Its simplicity belies its genius. Consider the problem of evaluating the integral of the curve $f(x)$ over the interval $[a,b]$. Assuming that expectations are well-defined, 
@@ -54,3 +53,4 @@ print("Approximate integral:", integral_approx)
 
 Approximate integral: 0.3353692778989746
 ```
+
