@@ -1,4 +1,4 @@
-﻿---
+---
 title: 'Monte-carlo integration'
 date: 2023-09-07
 permalink: /posts/2023/09/monte-carlo-integration/

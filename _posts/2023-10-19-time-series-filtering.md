@@ -1,6 +1,6 @@
 
 ---
-title: "Filtering, Or why you shouldn't throw away a noisy sensor"
+title: 'Filtering, Or why you shouldn't throw away a noisy sensor'
 date: 2023-10-19
 permalink: /posts/2023/10/filtering/
 excerpt: "An introduction to filtering and sensor fusion"
@@ -11,7 +11,6 @@ tags:
   - time series analysis
   - state space methods
 ---
-
 
 # Filtering: Or why you shouldn't throw away a noisy sensor
 
@@ -171,7 +170,5 @@ $$
     \operatorname{Var}(\hat x_t) = \left( \sum_{i=1}^n 1/\sigma_i^2 \right)^{-1}
     $$
 - **Observability:** Even a high-variance sensor may be essential if it sees a component of the state other sensors cannot. This could be a case where each signal is informative about a different part of the system.
-
----
 
 
