@@ -1,6 +1,6 @@
 ---
 
-title: "Matrix Algebra: At least 4 new perspectives"
+title: "Matrix Algebra: 4 perspectives"
 date: 2024-03-17\
 permalink: /posts/2023/10/matrixalgebra/\
 excerpt: "A quick intro to linear algebra concepts"
@@ -27,57 +27,58 @@ just think of B as $k$ column vectors of length $n$ stacked side by side.\
 We apply the same intuition to see that each of these columns will get mapped to a new column vector and we get a m-by-k matrix.\
 \
 2. *Understand matrices in terms of their "effects"*\
-Say $$ A =
+Say
+ $$ A =
 \begin{bmatrix} 
 1 & 0\\
 1 & 1\\
 \end{bmatrix}
 $$
 
-You are supposed to find $A^{81}$. Applying the matrix multiplication rule is an obvious, albeit not fun way of computing this. What else can we do instead? Notice how the matrix $A$ operates on a vector $v=\begin{bmatrix} x\\\\y \end{bmatrix}$
-.\\
+You are supposed to find $A^{81}$. Applying the matrix multiplication rule is an obvious, albeit not fun way of computing this. What else can we do instead? Notice how the matrix $A$ operates on a vector $v=\begin{bmatrix} x\\y \end{bmatrix}$.
+
 $$Av=\begin{bmatrix} x\\ x+y \\ \end{bmatrix}$$\
 \
-So applying this operation amounts to keeping the first element the same and changing the second element to the sum of the two.\
-\
+So applying this operation amounts to keeping the first element the same and changing the second element to the sum of the two.
+\\
 Applying this operation twice would result in:\
 \
-$$A(Av)=A^2v=\begin{bmatrix}x\\\\2x+y\end{bmatrix}$$\
+$$A(Av)=A^2v=\begin{bmatrix}x\\2x+y\end{bmatrix}$$\
 \
-Easy to see now that $$A^n v=\begin{bmatrix} x\\\\nx+y\end{bmatrix}$$\
+Easy to see now that $$A^n v=\begin{bmatrix} x\\nx+y\end{bmatrix}$$\
 \
 And the matrix corresponding to the operator $A^n$ should then be
 
-$$A^n=\begin{bmatrix} 1 & 0\\\\n & 1 \end{bmatrix}$$\
+$$A^n=\begin{bmatrix} 1 & 0\\n & 1 \end{bmatrix}$$\
 \
 If we apply the same logic to work out what the inverse would be: The inverse should, when applied to the resultant of operator A applied on $v$ give back $v$. That's how we define the inverse of an operator!\
 \
-$$A: \begin{bmatrix} x\\\\y \end{bmatrix} \rightarrow \begin{bmatrix} x\\\\x+y \end{bmatrix}$$\
+$$A: \begin{bmatrix} x\\y \end{bmatrix} \rightarrow \begin{bmatrix} x\\x+y \end{bmatrix}$$\
 \
 \
 \
 $$A^{-1}(Av)=v$$\
-$$A^{-1}\begin{bmatrix\} x\\\\x+y \end{bmatrix} = \begin{bmatrix} x\\\\y \end{bmatrix}$$\
+$$A^{-1}\begin{bmatrix\} x\\x+y \end{bmatrix} = \begin{bmatrix} x\\y \end{bmatrix}$$\
 \
 The matrix $A^{-1}$ should leave the first element as it is, the second element should transform to the difference between the second element of the input and the first element (we are noting here that  $y = (x+y) - x$.\
 \
 Clearly, the matrix corresponding to this operator is \
-$$\\begin\{pmatrix\} 1 & 0\\\\-1 & 1 \\end\{pmatrix\} $$\
+$$\\begin\{pmatrix\} 1 & 0\\-1 & 1 \\end\{pmatrix\} $$\
 \
 \
 We calculated the inverse without doing any of the boring algebra. And we gained intuition about what these matrices actually do. \
 \
 Consider the matrix $$L=\begin{bmatrix} 0 & 1 & 0\\ 0 & 0 & 1 \\0 & 0 & 0\end{bmatrix} $$\
 \
-$$v=\begin{bmatrix} x\\\\y\\\\z \end{bmatrix\} $$\
+$$v=\begin{bmatrix} x\\y\\z \end{bmatrix\} $$\
 \
-$$Lv=\begin{bmatrix} y\\\\z\\\\0 \end{bmatrix} $$\
+$$Lv=\begin{bmatrix} y\\z\\0 \end{bmatrix} $$\
 \
 So, the matrix L has the effect of operating on  replacing the first element with the second, the second with the third and replacing the third element with a 0.\
 \
 Clearly, applying this operator twice, we get\
-$$L^2v=\begin{bmatrix} z\\\\0\\\\0 \end{bmatrix}$$ \
-$$L^3v=\begin{bmatrix} 0\\\\0\\\\0 \end{bmatrix}$$ \
+$$L^2v=\begin{bmatrix} z\\0\\0 \end{bmatrix}$$ \
+$$L^3v=\begin{bmatrix} 0\\0\\0 \end{bmatrix}$$ \
 \
 We can see that the vector just "shifts" upwards after being operated on by L one step, while replacing the last element with 0. \
 \
@@ -98,12 +99,12 @@ A diagonal matrix acts on a vector simply by scaling individual components\
 \
 $$\begin{bmatrix}
    d_{1} &  &  &\\
-   & d_{2} &  & \\\\
-   &  &  \ddots & \\\\
+   & d_{2} &  & \\
+   &  &  \ddots & \\
    &  &   & d_{n}
  \end{bmatrix} 
  \begin{bmatrix} x_1\\ x_2 \\ \vdots \\ x_n \end{bmatrix} = 
-\begin{bmatrix} d_1x_1\\\\d_2x_2 \\\\\\vdots \\\\ d_nx_n \end{bmatrix}$$
+\begin{bmatrix} d_1x_1\\d_2x_2 \\\\vdots \\ d_nx_n \end{bmatrix}$$
 \
 \
 \
@@ -120,7 +121,7 @@ Multiplying with $O$ preserves the inner product (and hence angles between vecto
 $$\
 O(\theta)=
 \begin{pmatrix}
-\cos\theta & -\sin\theta \\\\[6pt]
+\cos\theta & -\sin\theta \\[6pt]
 \sin\theta & \cos\theta
 \end{pmatrix}
 $$O(\theta) \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}=
@@ -134,7 +135,7 @@ Multiplying with sequence of Orthogonal and Diagonal matrices would amount to st
 \
 4. *Matrix Algebra generalizes all linear operators*\
 \
-Consider the vector space (fancy way of saying the set) of all polynomials of degree $\\le 5$\
+Consider the vector space (fancy way of saying the set) of all polynomials of degree $\le 5$.
 \
 This space is "spanned" by the set\
 \
@@ -144,12 +145,12 @@ Indeed, any polynomial in the set can be represented as \
 \
 $$P(x)=a_0+a_1 x+a_2 x^2 +a_3 x^3 + a_4 x^4 +a_5 x^5$$\
 \
- All we need to specify is a vector  $a=\\begin\{bmatrix\}\
+ All we need to specify is a vector  $a=\begin{bmatrix}
  a_0 \\
  a_1 \\
  \vdots \\
  a_5\
- \\end\{bmatrix\}$ and the polynomial is uniquely identified. \
+ \end{bmatrix}$ and the polynomial is uniquely identified. \
 \
 Since polynomials are represented by vectors, matrix algebra can be used to describe linear operators on these polynomials\
 \
@@ -181,4 +182,3 @@ $a=\begin{bmatrix}
  0 & 0 & 0 & 0 & 0 & 5 \\
  \end{bmatrix}$
 
-D
