@@ -7,7 +7,7 @@ redirect_from:
   - /about/
   - /about.html
 ---
-I am a 4th year PhD student in Economics at the University of Texas at Austin. I am interested in monetary economics. I am interested in statistical learning in time-series analysis and bayesian econometrics. My research focuses on how Central Banks learn about the dynamics of the economy while trying to implement optimal policy conditional on its beliefs. 
+I am a 6th year PhD student in Economics at the University of Texas at Austin. I work primarily in monetary policy. My research focuses on the role of learning in macroeconomic dynamics. I am interested in statistical learning, structural time-series analysis and modeling expectations. I will be on the 2025-26 Job Market.
 
 Professional footprint
 ======
