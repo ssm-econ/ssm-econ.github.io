@@ -119,12 +119,10 @@ Multiplying with $O$ preserves the inner product (and hence angles between vecto
 \
 $$\
 O(\theta)=
-\begin{pmatrix}\
+\begin{pmatrix}
 \cos\theta & -\sin\theta \\\\[6pt]
 \sin\theta & \cos\theta
 \end{pmatrix}
-$$\
-\
 $$O(\theta) \begin{bmatrix} x_1 \\ x_2 \end{bmatrix}=
 \begin{bmatrix}
 x_1 cos(\theta) - x_2 sin(\theta) \\
@@ -174,8 +172,7 @@ The operator $D$ maps the vector $\begin{bmatrix}
  5a_5 \\
  \end{bmatrix}$\
  \
-This operation can be represented by the matrix \
-\
+This operation can be represented by the matrix
 $a=\begin{bmatrix}
  0 & 1 & 0 & 0 & 0 & 0 \\
  0 & 0 & 2 & 0 & 0 & 0 \\
@@ -183,13 +180,5 @@ $a=\begin{bmatrix}
  0 & 0 & 0 & 0 & 4 & 0 \\
  0 & 0 & 0 & 0 & 0 & 5 \\
  \end{bmatrix}$
-\
-\
-\
-\
-\
-\
-\
-\
-\
-}
+
+D
