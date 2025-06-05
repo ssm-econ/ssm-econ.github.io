@@ -6,24 +6,19 @@ date: 2024-03-17
 permalink: /posts/2023/10/matrixalgebra/
 excerpt: "A quick intro to linear algebra concepts"
 tags:
-  - linear algebra\
-  - geometry\
+  - linear algebra
+  - geometry
 
 ---
 
-# Linear Algebra: At least four interesting ways to "see"\
+1. *Linear algebra is just mixing*
 
-1. *Matrix algebra is just mixing*
+Say $x$ is a n-dimensional vector and $A$ is a m x n matrix
+The operation of multiplying the matrix by $x \rightarrow Ax$ is just mixing the columns of A (each of length m) in the proportion suggested by the elements in $x$ yielding $x_1C_1+x_2C_2+\dots x_n C_n$ where $C_1,C_2, \dots ,C_n$ are columns of $A$.
 
-Say $x$ is a n-dimensional vector and $A$ is a m-by-n matrix
-The operation of multiplying the matrix by $x \rightarrow Ax$ is just mixing the columns of A (each of length m) in the proportion suggested by the elements in $x$ yielding $x_1C_1+x_2C_2+\dots x_n C_n$
+The result is a linear combination of the columns of $A$ (and hence of the same dimensions as the column itself)
 
-where $C_1,C_2, \dots ,C_n$ are columns of $A$.
-
-The result of multiplying a bunch of columns together would definitely be a column.
-
-If instead, we multiply $A$ by a n-by-k matrix $B$,\
-just think of B as $k$ column vectors of length $n$ stacked side by side.
+If instead, we multiply $A$ by a n x k matrix $B$, just think of B as $k$ column vectors of length $n$ stacked side by side.
 
 We apply the same intuition to see that each of these columns will get mapped to a new column vector and we get a m-by-k matrix.
 2. *Understand matrices in terms of their "effects"*
@@ -36,7 +31,7 @@ Say
 \end{bmatrix}
 $$
 
-You are supposed to find $A^{81}$. Applying the matrix multiplication rule is an obvious, albeit not fun way of computing this. What else can we do instead? Notice how the matrix $A$ operates on a vector $v=\begin{bmatrix} x\\y \end{bmatrix}$.
+You are supposed to find $A^{81}$. Applying the matrix multiplication rule is an obvious, albeit not fun way of computing this. What else can we do instead? Notice how the matrix $A$ operates on a vector $v=\begin{bmatrix} x\\ y \\ \end{bmatrix}$.
 
 $$Av=\begin{bmatrix} x\\ x+y \\ \end{bmatrix}$$
 
@@ -45,21 +40,20 @@ So applying this operation amounts to keeping the first element the same and cha
 Applying this operation twice would result in:
 
 $$A(Av)=A^2v=\begin{bmatrix}x\\2x+y\end{bmatrix}$$
+
 Easy to see now that $$A^n v=\begin{bmatrix} x\\nx+y\end{bmatrix}$$
 
 And the matrix corresponding to the operator $A^n$ should then be
 
 $$A^n=\begin{bmatrix} 1 & 0\\n & 1 \end{bmatrix}$$
 
-If we apply the same logic to work out what the inverse would be: The inverse should, when applied to the resultant of operator A applied on $v$ give back $v$. That's how we define the inverse of an operator!\
-\
+If we apply the same logic to work out what the inverse would be: The inverse should, when applied to the resultant of operator A applied on $v$ give back $v$. That's how we define the inverse of an operator!
+
 $$A: \begin{bmatrix} x\\y \end{bmatrix} \rightarrow \begin{bmatrix} x\\x+y \end{bmatrix}$$\
-\
-\
-\
+
 $$A^{-1}(Av)=v$$\
 $$A^{-1}\begin{bmatrix} x\\x+y \end{bmatrix} = \begin{bmatrix} x\\y \end{bmatrix}$$\
-\
+
 The matrix $A^{-1}$ should leave the first element as it is, the second element should transform to the difference between the second element of the input and the first element (we are noting here that  $y = (x+y) - x$.
 
 Clearly, the matrix corresponding to this operator is 
@@ -142,11 +136,11 @@ This space is "spanned" by the set $$ \{1,x,x^2,x^3,x^4,x^5\} $$
 
 Indeed, any polynomial in the set can be represented as 
 $$P(x)=a_0+a_1 x+a_2 x^2 +a_3 x^3 + a_4 x^4 +a_5 x^5$$
- All we need to specify is a vector  $a=\begin{bmatrix}
- a_0 \\
- a_1 \\
+ All we need to specify is a vector  $a=\begin{bmatrix} 
+a_0 \\
+a_1 \\
  \vdots \\
- a_5
+a_5
  \end{bmatrix}$ and the polynomial is uniquely identified. 
 Since polynomials are represented by vectors, matrix algebra can be used to describe linear operators on these polynomials
 
@@ -155,26 +149,26 @@ Since polynomials are represented by vectors, matrix algebra can be used to desc
 $$DP(x)=a_1 + 2a_2 x + 3a_3 x^2 + 4 a_4 x^3 +5 a_5 x^4$$
 
 The operator $D$ maps the vector $\begin{bmatrix}
- a_0 \\
- a_1 \\
- a_2 \\
- a_3 \\
- a_4 \\
- a_5
- \end{bmatrix}$ to $\begin{bmatrix}
- a_1 \\
- 2a_2 \\
- 3a_3 \\
- 4a_4 \\
- 5a_5 \\
- \end{bmatrix}$
+a_0 \\
+a_1 \\
+a_2 \\
+a_3 \\
+a_4 \\
+a_5
+\end{bmatrix}$ to $\begin{bmatrix}
+a_1 \\
+2a_2 \\
+3a_3 \\
+4a_4 \\
+5a_5 \\
+\end{bmatrix}$
  
 This operation can be represented by the matrix
 $a=\begin{bmatrix}
- 0 & 1 & 0 & 0 & 0 & 0 \\
- 0 & 0 & 2 & 0 & 0 & 0 \\
- 0 & 0 & 0 & 3 & 0 & 0 \\
- 0 & 0 & 0 & 0 & 4 & 0 \\
- 0 & 0 & 0 & 0 & 0 & 5 \\
- \end{bmatrix}$
+0 & 1 & 0 & 0 & 0 & 0 \\
+0 & 0 & 2 & 0 & 0 & 0 \\
+0 & 0 & 0 & 3 & 0 & 0 \\
+0 & 0 & 0 & 0 & 4 & 0 \\
+0 & 0 & 0 & 0 & 0 & 5 \\
+\end{bmatrix}$
 

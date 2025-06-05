@@ -149,17 +149,14 @@ $$
 K_t = \frac{P_{t|t-1}}{P_{t|t-1} + R_\text{agg}}
 $$
 - State/covariance update:
-$$
-\hat x_{t|t} = \hat x_{t|t-1} + K_t (\bar s_t - \hat x_{t|t-1}), \qquad P_{t|t} = (1 - K_t) P_{t|t-1}
-$$
+$$\hat x_{t|t} = \hat x_{t|t-1} + K_t (\bar s_t - \hat x_{t|t-1}), \qquad P_{t|t} = (1 - K_t) P_{t|t-1}$$
 ---
 
 ## 3. Why Even a Noisy Sensor Helps
 
-- **Variance always drops:** At each time, the aggregate measurement’s variance is always smaller than that of the best individual sensor.
-- **Precision compounds forward:** Each reduction of $P_{t|t}$ improves future predictions $P_{t+1|t}$.
-- **Independence is crucial:** If errors are perfectly correlated, there is no gain, since the second signal provides little additional information in that case.
-
+- *Variance always drops:* At each time, the aggregate measurement’s variance is always smaller than that of the best individual sensor.
+- *Precision compounds forward:* Each reduction of $P_{t|t}$ improves future predictions $P_{t+1|t}$.
+- *Independence is crucial:* If errors are perfectly correlated, there is no gain, since the second signal provides little additional information in that case.
 ---
 
 ## 4. Beyond Two Sensors, Beyond Gaussian
