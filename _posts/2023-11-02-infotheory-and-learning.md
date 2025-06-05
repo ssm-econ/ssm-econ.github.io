@@ -11,15 +11,10 @@ tags:
 
 # Information Entropy
 
-## 1. Introduction
-
-Entropy, originally a concept from thermodynamics, is a measure of disorder or uncertainty in a system.  
-In the context of information theory, information entropy quantifies the uncertainty inherent in a random variable or signal.  
-Introduced by Claude Shannon in 1948, it forms the foundation of modern communication, data compression, and machine learning.
-
+Entropy, originally a concept from thermodynamics, is a measure of disorder or uncertainty in a system.  In the context of information theory, information entropy quantifies the uncertainty inherent in a random variable or signal.  Introduced by Claude Shannon as part of his Master's Thesis at MIT in 1948, it forms the foundation of all modern statistical learning theory.
 ---
 
-## 2. Motivation: Predictability and Surprise
+## Motivation: Predictability and Surprise
 
 Are all signals equally informative? Not quite.  
 Consider two probability distributions:
@@ -55,7 +50,7 @@ $$
 - Entropy is measured in **bits** (log base 2) or **nats** (log base e).  
 
 
-## 3. Properties of Entropy
+## Properties of Entropy
 
 - **Non-negativity**: $ H(p) \geq 0 $
 - **Maximum entropy**: Occurs for a uniform distribution
@@ -64,7 +59,7 @@ $$
 
 ---
 
-## 4. Maximum Entropy Principle
+## Maximum Entropy Principle
 
 
 Given a finite set $ X $, maximize:
@@ -111,7 +106,7 @@ This is intuitive since if the probabilities are equal, there is maximum ex-ante
 
 ---
 
-## 5. Differential Entropy
+## Differential Entropy
 
 $$
 H(p) = -\int_{-\infty}^{\infty} p(x) \log p(x) \, dx
@@ -124,7 +119,7 @@ $$
 
 ---
 
-## 6. KL Divergence and Related Concepts
+## KL Divergence and Related Concepts
 
 **KL Divergence**:
 
@@ -151,7 +146,7 @@ $$
 
 ---
 
-## 7. KL Divergence as Information Value
+## KL Divergence as Information Value
 
 The **information gain** from a signal $ x $ is:
 
@@ -166,7 +161,7 @@ $$
 
 ---
 
-### Information Gain in Linear Regression
+## Information Gain in Linear Regression
 
 Suppose the model is:
 
@@ -229,10 +224,9 @@ $$
 
 Where $ k = 2 $ (dimension of parameter vector).
 
----
 
 
-Code snippet
+Code snippet for implementing the example
 ```
 # Re-run after code execution state reset
 import numpy as np
@@ -279,12 +273,11 @@ plt.title("Information Gain")
 plt.tight_layout()
 ```
 
-### Interpretation
+## Interpretation
 
-- Higher KL divergence → More informative observation
-- KL is higher when:
+  - Higher KL divergence → More informative observation
+  - KL is higher when:
   - Posterior mean shifts significantly
   - Posterior variance reduces
-- KL is low when:
+  - KL is low when:
   - Data supports prior (minimal update)
----
