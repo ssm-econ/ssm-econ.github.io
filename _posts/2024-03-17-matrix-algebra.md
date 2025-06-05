@@ -1,4 +1,4 @@
-
+---
 
 title: "Matrix Algebra: At least 4 new perspectives"
 date: 2024-03-17\
@@ -8,10 +8,10 @@ tags:
   - linear algebra\
   - geometry\
 
----\
-\
+---
+
 # Linear Algebra: At least four interesting ways to "see"\
-\
+
 1. *Matrix algebra is just mixing*\
 Say $x$ is a n-dimensional vector and $A$ is a m-by-n matrix\
 \
