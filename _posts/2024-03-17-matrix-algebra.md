@@ -147,9 +147,9 @@ Indeed, any polynomial in the set can be represented as \
 $$P(x)=a_0+a_1 x+a_2 x^2 +a_3 x^3 + a_4 x^4 +a_5 x^5$$\
 \
  All we need to specify is a vector  $a=\\begin\{bmatrix\}\
- a_0 \\\\\
- a_1 \\\\\
- \\vdots \\\\\
+ a_0 \\
+ a_1 \\
+ \vdots \\
  a_5\
  \\end\{bmatrix\}$ and the polynomial is uniquely identified. \
 \
@@ -182,7 +182,7 @@ $a=\begin{bmatrix}
  0 & 0 & 0 & 3 & 0 & 0 \\
  0 & 0 & 0 & 0 & 4 & 0 \\
  0 & 0 & 0 & 0 & 0 & 5 \\
- \end{bmatrix}$\
+ \end{bmatrix}$
 \
 \
 \
