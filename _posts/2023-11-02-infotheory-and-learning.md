@@ -9,8 +9,7 @@ tags:
   - bayesian inference
 ---
 
-
-# Information and Entropy: A Bayesian Perspective
+# Information Entropy
 
 ## 1. Introduction
 
@@ -27,21 +26,21 @@ Consider two probability distributions:
 
 **Case 1:**
 
-```
-p(x) = {
-  0.99 if x = 0  
-  0.01 if x = 1
-}
-```
+$$
+p(x)= \begin{cases}
+0.99 & \text{if } x=0 \\
+0.01 & \text{if } x=1
+\end{cases}
+$$
 
 **Case 2:**
 
-```
-q(x) = {
-  0.5 if x = 0  
-  0.5 if x = 1
-}
-```
+$$
+q(x)= \begin{cases}
+0.5 & \text{if } x=0 \\
+0.5 & \text{if } x=1
+\end{cases}
+$$
 
 - In the first case, the uncertainty is low.  
 - In the second, each observation gives new information.  
@@ -49,88 +48,79 @@ q(x) = {
 
 **Shannon Entropy (for a discrete distribution p(x)):**
 
-```
-H(p) = − ∑ p(x) log p(x)
-```
+$$
+H(p) = -\sum_{x \in X} p(x) \log p(x)
+$$
 
 - Entropy is measured in **bits** (log base 2) or **nats** (log base e).  
-- Example:
-  - \( H(p) pprox 0.080 \) bits  
-  - \( H(q) = 1.0 \) bit
 
----
 
 ## 3. Properties of Entropy
 
-- **Non-negativity**: \( H(p) \geq 0 \)
+- **Non-negativity**: $ H(p) \geq 0 $
 - **Maximum entropy**: Occurs for a uniform distribution
-- **Additivity**: \( H(X,Y) = H(X) + H(Y) \)
+- **Additivity**: $ H(X,Y) = H(X) + H(Y) $
 - **Concavity**: Entropy is concave in p
 
 ---
 
 ## 4. Maximum Entropy Principle
 
-Given a finite set X, maximize:
 
-```
-H(p) = −∑ p(x) log p(x)
-subject to ∑ p(x) = 1
-```
+Given a finite set $ X $, maximize:
+$$
+H(p) = -\sum_{x \in X} p(x) \log p(x), \quad \sum_{x \in X} p(x) = 1
+$$
 
-Let \( f(t) = −t \log(t) \) — a **concave function**.
+Let $ f(t) = -t \log(t) $ (concave function). The maximum occurs at:
+$$
+p(x_i) = \frac{1}{n} \text{ for all } i
+$$
 
-The maximum occurs at:
+Consider the following optimization problem:
 
-```
-p(x_i) = 1/n  for all i
-```
+$$max_{p(x)} H(p) = -\sum_{x\in X} p(x)\log p(x) $$ such that
+$$\sum_{x\in X} p(x)=1$$
 
-This is equivalent to choosing \( z_i \geq 0 \) such that:
 
-```
-∑ z_i = 1
-```
+**Aliter**: 
+$$f(t)=-t\log(t)$$ is a **concave** function.
 
-Then solve:
+We can write the equivalent maximization problem of choosing $z_i$ 
 
-```
-max ∑ f(z_i)
-```
+This is equivalent to choosing $z_i\geq0$ s.t 
+$$\sum_{i=1}^n z_i=1$$ to solve
 
-Using Jensen’s Inequality:
+$$max_{z_i} \sum_{i=1}^n f(z_i) $$
 
-```
-∑ (1/n) f(z_i) ≤ f(∑ (1/n) z_i)
-```
+\textbf{Concavity of f: Jensen's Inequality}
 
-which leads to:
+Using the definition of concavity, for any $0<\alpha<1$, 
+$$f(\alpha x+(1-\alpha) y) \geq \alpha f(x) + (1-\alpha) f(y) \hspace{5 mm} \forall x,y \in Domain(f)$$
 
-```
-∑ (1/n) f(z_i) ≤ log(n)
-```
+We can choose $\alpha_1=\alpha_2=...=\frac{1}{n}$
 
-Achieved when all \( z_i \) are equal:
+$$\sum_{i=1}^n \frac{1}{n}f(z_i) \leq f(\sum_{i=1}^n \frac{1}{n}z_i)$$
+ 
 
-```
-p(x_i) = 1/n for all i
-```
+$$\sum_{i=1}^n \frac{1}{n}f(z_i) \leq \log(n)$$ which is achieved when $z_i$ are all equal i.e $p(x_i)=\frac{1}{n}$ for all i.
 
-**Conclusion:**  
-Maximum entropy occurs when all probabilities are equal — representing maximum uncertainty.
+What this means is that the probability distribution that has the maximum entropy assigns equal probabilities to all elements in the set.
+
+This is intuitive since if the probabilities are equal, there is maximum ex-ante uncertainty about the outcome.
 
 ---
 
 ## 5. Differential Entropy
 
-```
-H(p) = − ∫ p(x) log p(x) dx
-```
+$$
+H(p) = -\int_{-\infty}^{\infty} p(x) \log p(x) \, dx
+$$
 
 - **Can be negative**
 - Not invariant under reparameterization
 - Interpretation differs from discrete entropy
-- Makes sense primarily when **comparing** distributions
+- Only meaningful when **comparing** distributions
 
 ---
 
@@ -138,43 +128,41 @@ H(p) = − ∫ p(x) log p(x) dx
 
 **KL Divergence**:
 
-```
-D_KL(p ∥ q) = ∑ p(x) log [p(x) / q(x)]
-```
 
-Also:
+$$
+D_{\text{KL}}(p \mid q) = \sum_{x \in X} p(x) \log \frac{p(x)}{q(x)}
+$$
 
-```
-D_KL(p ∥ q) = H(p, q) − H(p)
-```
+$$
+D_{\text{KL}}(p \mid q) = H(p, q) - H(p)
+$$
 
 **Cross-Entropy**:
 
-```
-H(p, q) = −∑ p(x) log q(x)
-```
+$$
+H(p, q) = -\sum_{x \in X} p(x) \log q(x)
+$$
 
 **Reparameterization Invariance**:
 
-```
-D_KL(p(x) ∥ q(x)) = D_KL(p'(y) ∥ q'(y))
-```
+$$
+D_{\text{KL}}(p(x) \mid q(x)) = D_{\text{KL}}(p'(y) \mid q'(y))
+$$
 
 ---
 
 ## 7. KL Divergence as Information Value
 
-The **information gain** from a signal \( x \) is:
+The **information gain** from a signal $ x $ is:
 
-```
-D_KL(p(θ | x) ∥ p(θ))
-```
-
+$$
+D_{\text{KL}}(p(\theta | x) \,\mid\, p(\theta))
+$$
 **Expected Information Gain**:
 
-```
-E_x~p(x) [D_KL(p(θ | x) ∥ p(θ))] = I(X; θ)
-```
+$$
+\mathbb{E}_{x \sim p(x)} \left[ D_{\text{KL}}(p(\theta | x) \,\mid\, p(\theta)) \right] = I(X; \theta)
+$$
 
 ---
 
@@ -182,51 +170,64 @@ E_x~p(x) [D_KL(p(θ | x) ∥ p(θ))] = I(X; θ)
 
 Suppose the model is:
 
-```
-y = ax + b + ε,    ε ∼ N(0, σ²)
-```
+$$
+y = ax + b + \epsilon, \quad \epsilon \sim \mathcal{N}(0, \sigma^2)
+$$
+with joint prior over:
 
-with priors:
+$$
+\begin{bmatrix}
+a \\ b
+\end{bmatrix} \sim \mathcal{N} \left(
+\begin{bmatrix}
+\mu_a \\ \mu_b
+\end{bmatrix},
+\begin{bmatrix}
+\tau_a^2 & 0 \\
+0 & \tau_b^2
+\end{bmatrix}
+\right)
+$$
 
-```
-a ∼ N(μ_a, τ²_a),    b ∼ N(μ_b, τ²_b)
-```
-
-After observation \{x, y\}, update posterior:
+After observation  $\{x, y$ , update posterior:
 
 **Likelihood**:
 
-```
-p(y | a, b) = N(y | ax + b, σ²)
-```
+$$
+p(y \mid a, b) = \mathcal{N}(y \mid ax + b, \sigma^2)
+$$
 
 **Posterior** is Gaussian:
 
-```
-p(a, b | x, y) = N(μ₁, Σ₁)
-```
+$$
+p(a, b \mid x, y) = \mathcal{N}(\mu_1, \Sigma_1)
+$$
 
 With:
 
-```
-Σ₁⁻¹ = Σ₀⁻¹ + (1/σ²) ΦᵀΦ  
-μ₁ = Σ₁ [Σ₀⁻¹μ₀ + (1/σ²) Φᵀy]
-```
+$$
+\Sigma_1^{-1} = \Sigma_0^{-1} + \frac{1}{\sigma^2} \Phi^\top \Phi
+\quad \text{and} \quad
+\mu_1 = \Sigma_1 \left( \Sigma_0^{-1} \mu_0 + \frac{1}{\sigma^2} \Phi^\top y \right)
+$$
 
 Where:
 
-```
-Φ = [x  1]
-```
+$ \Phi = [x \; 1] $
 
 **Information Gain (KL divergence)**:
 
-```
-D_KL(N(μ₁, Σ₁) ∥ N(μ₀, Σ₀)) =
-1/2 [ tr(Σ₀⁻¹Σ₁) + (μ₀ − μ₁)ᵀΣ₀⁻¹(μ₀ − μ₁) − k + log(det Σ₀ / det Σ₁) ]
-```
+$$
+D_{\text{KL}}\left( \mathcal{N}(\mu_1, \Sigma_1) \mid \mathcal{N}(\mu_0, \Sigma_0) \right)
+= \frac{1}{2} \left[
+\operatorname{tr}(\Sigma_0^{-1} \Sigma_1)
++ (\mu_0 - \mu_1)^T \Sigma_0^{-1} (\mu_0 - \mu_1)
+- k + \log\left( \frac{\det \Sigma_0}{\det \Sigma_1} \right)
+\right]
+$$
 
-Where \( k = 2 \) (dimension of parameter vector).
+
+Where $ k = 2 $ (dimension of parameter vector).
 
 ---
 
@@ -286,5 +287,4 @@ plt.tight_layout()
   - Posterior variance reduces
 - KL is low when:
   - Data supports prior (minimal update)
-
 ---
