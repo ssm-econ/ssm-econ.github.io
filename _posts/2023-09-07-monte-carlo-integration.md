@@ -5,7 +5,6 @@ permalink: /posts/2023/09/monte-carlo-integration/
 excerpt: "When I first read about it, I was quite amazed that the task of approximating the area under a curve could be performed without really calculating areas at all. And instead, by rolling dice..."
 tags:
   - state space methods
-  - kalman filter
   - bayesian inference
 ---
 

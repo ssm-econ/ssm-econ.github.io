@@ -1,15 +1,14 @@
 
 ---
-
-title: "Matrix Algebra: 4 perspectives"
+title: 'Matrix Algebra: 4 perspectives'
 date: 2024-03-17
 permalink: /posts/2023/10/matrixalgebra/
 excerpt: "A quick intro to linear algebra concepts"
 tags:
   - linear algebra
   - geometry
-
 ---
+
 
 1. *Linear algebra is just mixing*
 
@@ -49,10 +48,10 @@ $$A^n=\begin{bmatrix} 1 & 0\\n & 1 \end{bmatrix}$$
 
 If we apply the same logic to work out what the inverse would be: The inverse should, when applied to the resultant of operator A applied on $v$ give back $v$. That's how we define the inverse of an operator!
 
-$$A: \begin{bmatrix} x\\y \end{bmatrix} \rightarrow \begin{bmatrix} x\\x+y \end{bmatrix}$$\
+$$A: \begin{bmatrix} x\\y \end{bmatrix} \rightarrow \begin{bmatrix} x\\x+y \end{bmatrix}$$
 
-$$A^{-1}(Av)=v$$\
-$$A^{-1}\begin{bmatrix} x\\x+y \end{bmatrix} = \begin{bmatrix} x\\y \end{bmatrix}$$\
+$$A^{-1}(Av)=v$$
+$$A^{-1}\begin{bmatrix} x\\x+y \end{bmatrix} = \begin{bmatrix} x\\y \end{bmatrix}$$
 
 The matrix $A^{-1}$ should leave the first element as it is, the second element should transform to the difference between the second element of the input and the first element (we are noting here that  $y = (x+y) - x$.
 
@@ -62,13 +61,11 @@ $$\begin{bmatrix} 1 & 0\\-1 & 1 \end{bmatrix} $$
 We calculated the inverse without doing any of the boring algebra. And we gained intuition about what these matrices actually do. 
 
 Consider the matrix 
-$$L=\begin{bmatrix} 0 & 1 & 0\\ 0 & 0 & 1 \\0 & 0 & 0\end{bmatrix} $$
-
-$$v=\begin{bmatrix} x\\y\\z \end{bmatrix} $$
+$$L=\begin{bmatrix} 0 & 1 & 0\\ 0 & 0 & 1 \\0 & 0 & 0\end{bmatrix} $$ and the vector $v=\begin{bmatrix} x\\y\\z \end{bmatrix} $
 
 $$Lv=\begin{bmatrix} y\\z\\0 \end{bmatrix} $$
 
-So, the matrix L has the effect of operating on  replacing the first element with the second, the second with the third and replacing the third element with a 0.
+So, the matrix L has the effect of replacing the first element with the second, the second with the third and replacing the third element with a 0.
 
 Clearly, applying this operator twice, we get
 $$L^2v=\begin{bmatrix} z\\0\\0 \end{bmatrix}$$ 
