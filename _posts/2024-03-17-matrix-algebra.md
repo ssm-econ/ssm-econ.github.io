@@ -9,7 +9,7 @@ tags:
 ---
 
 
-1. *Linear algebra is just mixing*
+1.*Linear algebra is just mixing*
 
 Say $x$ is a n-dimensional vector and $A$ is a m x n matrix
 The operation of multiplying the matrix by $x \rightarrow Ax$ is just mixing the columns of A (each of length m) in the proportion suggested by the elements in $x$ yielding $x_1C_1+x_2C_2+\dots x_n C_n$ where $C_1,C_2, \dots ,C_n$ are columns of $A$.
@@ -19,7 +19,8 @@ The result is a linear combination of the columns of $A$ (and hence of the same 
 If instead, we multiply $A$ by a n x k matrix $B$, just think of B as $k$ column vectors of length $n$ stacked side by side.
 
 We apply the same intuition to see that each of these columns will get mapped to a new column vector and we get a m-by-k matrix.
-2. *Understand matrices in terms of their "effects"*
+
+2.*Understand matrices in terms of their "effects"*
 
 Say
  $$ A =
@@ -84,7 +85,7 @@ $$Lv_t=\begin{bmatrix} x_{t-1}\\ x_{t-2} \\ 0 \end{bmatrix}$$
 Hence, applying $L$ gives us a vector with lagged observations. One can obviously not construct a linear operator that recovers the original vector after being operated on by $L$, since all information about $x_t$ is just gone and cannot be recovered.
 
 
-3. *Matrices just rotate and stretch*
+3.*Matrices just rotate and stretch*
 
 A linear mapping is defined as one that maps a line in the domain space into another line in (possibly a different dimensional) range.
 
@@ -125,7 +126,7 @@ x_1 sin(\theta) + x_2 cos(\theta) \\
 
 Multiplying with sequence of Orthogonal and Diagonal matrices would amount to stretching and rotating matrices.
 
-4. *Matrix Algebra generalizes all linear operators*
+4.*Matrix Algebra generalizes all linear operators*
 
 Consider the vector space (fancy way of saying the set) of all polynomials of degree $\le 5$.
 
