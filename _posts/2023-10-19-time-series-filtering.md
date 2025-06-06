@@ -1,4 +1,3 @@
-
 ---
 title: 'Filtering, Or why you shouldn't throw away a noisy sensor'
 date: 2023-10-19

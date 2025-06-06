@@ -1,8 +1,7 @@
-
 ---
 title: 'Matrix Algebra: 4 perspectives'
 date: 2024-03-17
-permalink: /posts/2023/10/matrixalgebra/
+permalink: /posts/2024/10/matrixalgebra/
 excerpt: "A quick intro to linear algebra concepts"
 tags:
   - linear algebra
@@ -133,39 +132,28 @@ This space is "spanned" by the set $$ \{1,x,x^2,x^3,x^4,x^5\} $$
 
 Indeed, any polynomial in the set can be represented as 
 $$P(x)=a_0+a_1 x+a_2 x^2 +a_3 x^3 + a_4 x^4 +a_5 x^5$$
- All we need to specify is a vector  $a=\begin{bmatrix} 
-a_0 \\
-a_1 \\
- \vdots \\
-a_5
- \end{bmatrix}$ and the polynomial is uniquely identified. 
+ All we need to specify is a vector  $a=\begin{bmatrix} a_0 \\ a_1 \\ \vdots \\ a_5 \end{bmatrix}$ and the polynomial is uniquely identified. 
 Since polynomials are represented by vectors, matrix algebra can be used to describe linear operators on these polynomials
 
 **Differentiation is a linear operator**
 
 $$DP(x)=a_1 + 2a_2 x + 3a_3 x^2 + 4 a_4 x^3 +5 a_5 x^4$$
 
-The operator $D$ maps the vector $\begin{bmatrix}
-a_0 \\
+The operator $D$ maps the vector $\begin{bmatrix} a_0 \\
 a_1 \\
 a_2 \\
 a_3 \\
 a_4 \\
-a_5
-\end{bmatrix}$ to $\begin{bmatrix}
-a_1 \\
+a_5 \end{bmatrix}$ to $\begin{bmatrix} a_1 \\
 2a_2 \\
 3a_3 \\
 4a_4 \\
-5a_5 \\
-\end{bmatrix}$
+5a_5 \\ \end{bmatrix}$
  
 This operation can be represented by the matrix
-$a=\begin{bmatrix}
-0 & 1 & 0 & 0 & 0 & 0 \\
+$a=\begin{bmatrix} 0 & 1 & 0 & 0 & 0 & 0 \\
 0 & 0 & 2 & 0 & 0 & 0 \\
 0 & 0 & 0 & 3 & 0 & 0 \\
 0 & 0 & 0 & 0 & 4 & 0 \\
-0 & 0 & 0 & 0 & 0 & 5 \\
-\end{bmatrix}$
+0 & 0 & 0 & 0 & 0 & 5 \\ \end{bmatrix}$
 
