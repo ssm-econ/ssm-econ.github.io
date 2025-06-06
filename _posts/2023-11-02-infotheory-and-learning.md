@@ -12,7 +12,6 @@ tags:
 # Information Entropy
 
 Entropy, originally a concept from thermodynamics, is a measure of disorder or uncertainty in a system.  In the context of information theory, information entropy quantifies the uncertainty inherent in a random variable or signal.  Introduced by Claude Shannon as part of his Master's Thesis at MIT in 1948, it forms the foundation of all modern statistical learning theory.
----
 
 ## Motivation: Predictability and Surprise
 
