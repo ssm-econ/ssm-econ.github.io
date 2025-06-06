@@ -50,9 +50,10 @@ If we apply the same logic to work out what the inverse would be: The inverse sh
 $$A: \begin{bmatrix} x\\y \end{bmatrix} \rightarrow \begin{bmatrix} x\\x+y \end{bmatrix}$$
 
 $$A^{-1}(Av)=v$$
-$$A^{-1}\begin{bmatrix} x\\x+y \end{bmatrix} = \begin{bmatrix} x\\y \end{bmatrix}$$
 
-The matrix $A^{-1}$ should leave the first element as it is, the second element should transform to the difference between the second element of the input and the first element (we are noting here that  $y = (x+y) - x$.
+$$\implies A^{-1}(\begin{bmatrix} x\\x+y \end{bmatrix})= \begin{bmatrix} x\\y \end{bmatrix}$$
+
+The matrix $A^{-1}$ should leave the first element as it is, the second element after the transformation should become the difference between the second and the first element of the input (we are noting here that  $y = (x+y) - x$.
 
 Clearly, the matrix corresponding to this operator is 
 $$\begin{bmatrix} 1 & 0\\-1 & 1 \end{bmatrix} $$
@@ -60,7 +61,7 @@ $$\begin{bmatrix} 1 & 0\\-1 & 1 \end{bmatrix} $$
 We calculated the inverse without doing any of the boring algebra. And we gained intuition about what these matrices actually do. 
 
 Consider the matrix 
-$$L=\begin{bmatrix} 0 & 1 & 0\\ 0 & 0 & 1 \\0 & 0 & 0\end{bmatrix} $$ and the vector $v=\begin{bmatrix} x\\y\\z \end{bmatrix} $
+$$L=\begin{bmatrix} 0 & 1 & 0\\ 0 & 0 & 1 \\0 & 0 & 0\end{bmatrix} $$ and the vector $$v=\begin{bmatrix} x\\y\\z \end{bmatrix} $$
 
 $$Lv=\begin{bmatrix} y\\z\\0 \end{bmatrix} $$
 
@@ -132,28 +133,28 @@ This space is "spanned" by the set $$ \{1,x,x^2,x^3,x^4,x^5\} $$
 
 Indeed, any polynomial in the set can be represented as 
 $$P(x)=a_0+a_1 x+a_2 x^2 +a_3 x^3 + a_4 x^4 +a_5 x^5$$
- All we need to specify is a vector  $a=\begin{bmatrix} a_0 \\ a_1 \\ \vdots \\ a_5 \end{bmatrix}$ and the polynomial is uniquely identified. 
+ All we need to specify is a vector  $$a=\begin{bmatrix} a_0 \\ a_1 \\ \vdots \\ a_5 \end{bmatrix}$$ and the polynomial is uniquely identified. 
 Since polynomials are represented by vectors, matrix algebra can be used to describe linear operators on these polynomials
 
 **Differentiation is a linear operator**
 
 $$DP(x)=a_1 + 2a_2 x + 3a_3 x^2 + 4 a_4 x^3 +5 a_5 x^4$$
 
-The operator $D$ maps the vector $\begin{bmatrix} a_0 \\
+The operator $D$ maps the vector $$\begin{bmatrix} a_0 \\
 a_1 \\
 a_2 \\
 a_3 \\
 a_4 \\
-a_5 \end{bmatrix}$ to $\begin{bmatrix} a_1 \\
+a_5 \end{bmatrix}$$ to $$\begin{bmatrix} a_1 \\
 2a_2 \\
 3a_3 \\
 4a_4 \\
-5a_5 \\ \end{bmatrix}$
+5a_5 \\ \end{bmatrix}$$
  
 This operation can be represented by the matrix
-$a=\begin{bmatrix} 0 & 1 & 0 & 0 & 0 & 0 \\
+$$a=\begin{bmatrix} 0 & 1 & 0 & 0 & 0 & 0 \\
 0 & 0 & 2 & 0 & 0 & 0 \\
 0 & 0 & 0 & 3 & 0 & 0 \\
 0 & 0 & 0 & 0 & 4 & 0 \\
-0 & 0 & 0 & 0 & 0 & 5 \\ \end{bmatrix}$
+0 & 0 & 0 & 0 & 0 & 5 \\ \end{bmatrix}$$
 
