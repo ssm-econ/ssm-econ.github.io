@@ -1,7 +1,7 @@
 ---
 title: 'Matrix Algebra: 4 perspectives'
 date: 2024-03-17
-permalink: /posts/2024/10/matrixalgebra/
+permalink: /posts/2024/03/matrixalgebra/
 excerpt: "A quick intro to linear algebra concepts"
 tags:
   - linear algebra

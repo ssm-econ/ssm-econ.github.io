@@ -15,7 +15,6 @@ tags:
 
 Simply put, filtering means extracting information from a bunch of noisy signals. But the intuition behind it can be elusive. To illustrate the point, consider this problem.
 
----
 
 ## Problem Statement
 
@@ -156,7 +155,6 @@ $$\hat x_{t|t} = \hat x_{t|t-1} + K_t (\bar s_t - \hat x_{t|t-1}), \qquad P_{t|t
 - *Variance always drops:* At each time, the aggregate measurement’s variance is always smaller than that of the best individual sensor.
 - *Precision compounds forward:* Each reduction of $P_{t|t}$ improves future predictions $P_{t+1|t}$.
 - *Independence is crucial:* If errors are perfectly correlated, there is no gain, since the second signal provides little additional information in that case.
----
 
 ## 4. Beyond Two Sensors, Beyond Gaussian
 

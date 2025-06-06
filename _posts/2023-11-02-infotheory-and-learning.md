@@ -1,7 +1,7 @@
 ---
 title: "Information theory and statistical learning: Some intuition"
 date: 2023-11-02
-permalink: /posts/2023/10/infotheory/
+permalink: /posts/2023/11/infotheory/
 excerpt: "Some basics of information theory and entropy. A small discussion on informativeness of signals"
 tags:
   - estimation
