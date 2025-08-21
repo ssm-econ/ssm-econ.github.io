@@ -7,8 +7,6 @@
 
 # Site Settings
 remote_theme: "mmistakes/minimal-mistakes"
-minimal_mistakes_skin: "default"
-
 plugins:
   - jekyll-remote-theme
   - jekyll-seo-tag
@@ -17,6 +15,7 @@ plugins:
   - jekyll-gist
   - jekyll-feed
   - jekyll-redirect-from
+
 
 locale                   : "en-US"
 title                    : "Personal Website"
