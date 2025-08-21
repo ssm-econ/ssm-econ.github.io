@@ -10,6 +10,7 @@ tags:
   - time series analysis
   - state space methods
 ---
+
 # Filtering: Adding up information
 
 Simply put, filtering means extracting information from a bunch of noisy signals. But the intuition behind it can be elusive. To illustrate the point, consider this problem.

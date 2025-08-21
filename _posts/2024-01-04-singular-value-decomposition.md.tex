@@ -16,8 +16,6 @@ The Singular Vector Decomposition is perhaps the most widely applied techniques 
 ## Big picture 
 From our linear algebra class we know that breaking a vector into perpendicular components makes life much easier. The Singular Vector Decomposition breaks a matrix into "perpendicular" rank-1 (read on to find out what this means) matrices. 
 
----
-
 ## 1) Vectors: why Pythagoras shows up
 Take an orthonormal basis $$\{\mathbf{e}_1,\dots,\mathbf{e}_n\}$$. Any vector $\mathbf{v}$ can be written as
 $$
@@ -29,7 +27,6 @@ $$
 $$
 Those coordinates are “orthogonal directions”. This is equivalent to taking a vector and dropping projections along some orthogonal directions and adding them up. These represent the "shadows" of the vector. Any $n$ dimensional vector is defined by the shadow it casts in any $n$ orthogonal directions.
 
----
 
 ## 2) Matrices as “machines”
 A matrix $A$ takes inputs in $\mathbb{R}^n$ and spits out outputs in $\mathbb{R}^m$. SVD finds:
@@ -47,13 +44,13 @@ $$
 A=\sum_{i=1}^r \sigma_i\,\mathbf{u}_i\mathbf{v}_i^T.
 $$
 
-Note that $\mathbf{u}_i\mathbf{v}_i^T$ is just a column-vector times a row-vector. It has only 1 linearly-independent column. For example $\begin{bmatrix} 1 & 4 & 2\end{bmatrix}^T\begin{bmatrix} 2 & 3 \end{bmatrix} =\begin{bmatrix} 2 & 3 \\ 8 & 12 \\ 4 & 6\end{bmatrix}$
+Note that $\mathbf{u}_i\mathbf{v}_i^T$ is just a column-vector times a row-vector. It has only 1 linearly-independent column. For example $\begin{bmatrix} 1 & 4 & 2\end{bmatrix}^T\begin{bmatrix} 2 & 3 \end{bmatrix} =\begin{bmatrix} 2 & 3 \\ 8 & 12 \\ 4 & 6 \end{bmatrix}$
 
 Each tile $\mathbf{u}_i\mathbf{v}_i^\top$ copies “how much of $\mathbf{v}_i$” is in the input and points it onto “the $\mathbf{u}_i$ direction”, stretching it by $\sigma_i$. 
 
 ---
 
-## 3) The right notion of “perpendicular” for matrices
+## The right notion of “perpendicular” for matrices
 For matrices, the natural inner product is the **Frobenius** inner product:
 $$
 \langle X,Y\rangle_F=\mathrm{tr}(X^\top Y)=\sum_{i,j}X_{ij}Y_{ij},
@@ -69,7 +66,7 @@ So SVD really is an **orthonormal expansion** of a matrix.
 
 ---
 
-## 4) Pythagoras for matrices (lengths add up)
+## Pythagoras for matrices (lengths add up)
 Because those tiles are perpendicular, energy adds (for matrices, the analogue of length is called the *energy*. This comes from calculating the Frobenius norm):
 $$
 \|A\|_F^2
