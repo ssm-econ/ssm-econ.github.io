@@ -75,9 +75,14 @@ $heading-line-height: 1.25;
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
-/* Readability polish */
-.page__content { max-width: 72ch; }
-.sidebar { font-size: 1rem; }
-.site-nav .nav__list { font-size: 1rem; }
-.highlighter-rouge, code, pre { font-size: 0.95em; }
+/* Slightly smaller author sidebar text */
+.sidebar { font-size: 0.95rem; }          /* was 1rem in our earlier setup */
+.sidebar .author__content { font-size: 0.95em; }
+.sidebar .author__urls a { font-size: 0.95em; }
+
+/* (optional) only shrink on wider screens */
+@media (min-width: 1000px) {
+  .sidebar { font-size: 0.9375rem; }      /* ~15px */
+}
+
 
