@@ -1,41 +1,34 @@
 ---
+# keep this front matter so Jekyll compiles SCSS
 ---
 
-/*
- *    Minimal Mistakes Jekyll Theme
- *
- *  - Michael Rose
- *  - mademistakes.com
- *  - https://twitter.com/mmistakes
- *
-*/
+@charset "utf-8";
 
-@import "vendor/breakpoint/breakpoint"; // media query mixins
-@import "variables";
-@import "mixins";
-@import "vendor/susy/susy";
+/* Use self-hosted Charter */
+$global-font-family: "Charter Web", "Charter", "Bitstream Charter",
+                     "Charis SIL", Georgia, serif;
+$header-font-family: $global-font-family;
 
-@import "reset";
-@import "base";
+/* Readable scale: no zoom needed on laptops/desktops */
+$type-size-1: 2.5rem;   // ~40px  H1
+$type-size-2: 2rem;     // ~32px  H2
+$type-size-3: 1.625rem; // ~26px  H3
+$type-size-4: 1.375rem; // ~22px  H4
+$type-size-5: 1.25rem;  // ~20px
+$type-size-6: 1.125rem; // ~18px  body
+$type-size-7: 1rem;     // ~16px  small
+$type-size-8: .9375rem; // ~15px
+$type-size-9: .875rem;  // ~14px
 
-@import "utilities";
-@import "animations";
-@import "tables";
-@import "buttons";
-@import "notices";
-@import "masthead";
-@import "navigation";
-@import "footer";
-@import "syntax";
+$body-line-height: 1.7;
+$heading-line-height: 1.25;
 
-@import "forms";
+/* Import skin, then theme */
+@import "minimal-mistakes/skins/#{$minimal_mistakes_skin}";
+@import "minimal-mistakes";
 
-@import "page";
-@import "archive";
-@import "sidebar";
-
-@import "vendor/font-awesome/fontawesome";
-@import "vendor/font-awesome/solid";
-@import "vendor/font-awesome/brands";
-@import "vendor/magnific-popup/magnific-popup";
-@import "print";
+/* Gentle polish for readability */
+.page__content { max-width: 72ch; }
+.sidebar { font-size: 1rem; }
+.site-nav .nav__list { font-size: 1rem; }
+.highlighter-rouge, code, pre { font-size: 0.95em; } // code not too tiny
