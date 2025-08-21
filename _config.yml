@@ -6,6 +6,8 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
+remote_theme: "mmistakes/minimal-mistakes"
+minimal_mistakes_skin: "default"   # or "air", "aqua", "dark", etc.
 locale                   : "en-US"
 title                    : "Personal Website"
 title_separator          : "-"

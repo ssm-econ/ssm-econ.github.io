@@ -1,15 +1,14 @@
 ---
-# keep this front matter so Jekyll compiles SCSS
 ---
 
 @charset "utf-8";
 
-/* Use self-hosted Charter */
+/* Use self-hosted Charter everywhere */
 $global-font-family: "Charter Web", "Charter", "Bitstream Charter",
                      "Charis SIL", Georgia, serif;
 $header-font-family: $global-font-family;
 
-/* Readable scale: no zoom needed on laptops/desktops */
+/* Readable, no-zoom sizes (body ≈ 18px) */
 $type-size-1: 2.5rem;   // ~40px  H1
 $type-size-2: 2rem;     // ~32px  H2
 $type-size-3: 1.625rem; // ~26px  H3
@@ -23,12 +22,12 @@ $type-size-9: .875rem;  // ~14px
 $body-line-height: 1.7;
 $heading-line-height: 1.25;
 
-/* Import skin, then theme */
+/* Load the skin, then the theme */
 @import "minimal-mistakes/skins/#{$minimal_mistakes_skin}";
 @import "minimal-mistakes";
 
-/* Gentle polish for readability */
+/* Readability polish */
 .page__content { max-width: 72ch; }
 .sidebar { font-size: 1rem; }
 .site-nav .nav__list { font-size: 1rem; }
-.highlighter-rouge, code, pre { font-size: 0.95em; } // code not too tiny
+.highlighter-rouge, code, pre { font-size: 0.95em; }
