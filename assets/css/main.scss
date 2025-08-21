@@ -87,8 +87,8 @@ $heading-line-height: 1.25;
 
 /* Bigger profile picture (author avatar) */
 .author__avatar img {
-  width: 160px;        /* was ~100–120px by default */
-  max-width: 160px;
+  width: 120px;        /* was ~100–120px by default */
+  max-width: 120px;
   height: auto;        /* keep aspect ratio */
   border-radius: 50%;  /* stay circular even if source isn't perfectly square */
   display: block;
