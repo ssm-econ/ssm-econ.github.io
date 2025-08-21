@@ -91,40 +91,19 @@ analytics:
 
 # Site Author
 author:
-  name             : "Shreeyesh Menon"
-  avatar           : "profile.png"
-  bio              : "Econ PhD @ UT Austin"
-  location         : "Austin, TX"
-  employer         :  
-  googlescholar    : 
-  email            :
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
-  uri              :
-  bitbucket        :
-  codepen          :
-  dribbble         :
-  flickr           :
-  facebook         :
-  foursquare       :
-  github           : "ssm-econ"
-  google_plus      :
-  keybase          :
-  instagram        :
-  impactstory      : 
-  lastfm           :
-  linkedin         :
-  orcid            : 
-  pinterest        :
-  soundcloud       :
-  stackoverflow    : # http://stackoverflow.com/users/123456/username
-  steam            :
-  tumblr           :
-  twitter          : "@ShreeyeshMenon"
-  vine             :
-  weibo            :
-  xing             :
-  youtube          :
-  wikipedia        :
+  name   : "Shreeyesh Menon"
+  avatar : "profile.png"
+  bio    : "Econ PhD @ UT Austin"
+  location: "Austin, TX"
+  # keep your other keys...
+
+  links:
+    - label: "Twitter"
+      icon: "fab fa-fw fa-twitter"     # brand icon class
+      url: "https://twitter.com/ShreeyeshMenon"  # or https://x.com/ShreeyeshMenon
+    - label: "GitHub"
+      icon: "fab fa-fw fa-github"
+      url: "https://github.com/ssm-econ"
 
 
 # Reading Files
