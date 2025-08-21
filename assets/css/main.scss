@@ -84,14 +84,10 @@ $left-sidebar-width-narrow: 360px;  /* used on smaller desktop breakpoints */
 .sidebar .author__content { font-size: 0.95em; }
 .sidebar .author__urls a { font-size: 0.95em; }
 
-/* (optional) only shrink on wider screens */
-@media (min-width: 1000px) {
-  .sidebar { font-size: 0.9375rem; }      /* ~15px */
-}
 
 /* Author avatar */
 .author__avatar img {
-  width: 160px;       /* or 200px if you prefer */
+  width: 120px;       /* or 200px if you prefer */
   max-width: 100%;
   height: auto;
   border-radius: 50%;
@@ -100,23 +96,10 @@ $left-sidebar-width-narrow: 360px;  /* used on smaller desktop breakpoints */
 }
 
 /* Optional: responsive sizing */
-@media (min-width: 1200px) {
+@media (min-width: 120px) {
   .author__avatar img { width: 300px; max-width: 300px; }
 }
 @media (max-width: 600px) {
   .author__avatar img { width: 140px; max-width: 140px; } /* a bit smaller on phones */
 }
-
-/* Force a wider left sidebar and shift content accordingly */
-@media (min-width: 64em) {
-  .sidebar { width: 340px; flex: 0 0 340px; }
-  .initial-content { padding-left: 340px; }  /* pushes main content over */
-}
-
-@media (min-width: 48em) and (max-width: 63.99em) {
-  .sidebar { width: 300px; flex: 0 0 300px; }
-  .initial-content { padding-left: 360px; }
-}
-
-.mjx-container, .mjx-container * { font-family: unset !important; }
 
