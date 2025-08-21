@@ -11,7 +11,7 @@ tags:
   - state space methods
 ---
 
-# Filtering: Or why you shouldn't throw away a noisy sensor
+# Filtering: Adding up information
 
 Simply put, filtering means extracting information from a bunch of noisy signals. But the intuition behind it can be elusive. To illustrate the point, consider this problem.
 
