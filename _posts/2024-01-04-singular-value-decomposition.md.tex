@@ -16,7 +16,7 @@ The Singular Vector Decomposition is perhaps the most widely applied techniques 
 ## Big picture 
 From our linear algebra class we know that breaking a vector into perpendicular components makes life much easier. The Singular Vector Decomposition breaks a matrix into "perpendicular" rank-1 (read on to find out what this means) matrices. 
 
-## 1) Vectors: why Pythagoras shows up
+## Vectors: why Pythagoras shows up
 Take an orthonormal basis $$\{\mathbf{e}_1,\dots,\mathbf{e}_n\}$$. Any vector $\mathbf{v}$ can be written as
 $$
 \mathbf{v}=\sum_{i=1}^n \langle \mathbf{v},\mathbf{e}_i\rangle \mathbf{e}_i,
@@ -28,7 +28,7 @@ $$
 Those coordinates are “orthogonal directions”. This is equivalent to taking a vector and dropping projections along some orthogonal directions and adding them up. These represent the "shadows" of the vector. Any $n$ dimensional vector is defined by the shadow it casts in any $n$ orthogonal directions.
 
 
-## 2) Matrices as “machines”
+## Matrices as “machines”
 A matrix $A$ takes inputs in $\mathbb{R}^n$ and spits out outputs in $\mathbb{R}^m$. SVD finds:
 - orthonormal **input directions** $\mathbf{v}_1,\dots,\mathbf{v}_r$ in $\mathbb{R}^n$,
 - orthonormal **output directions** $\mathbf{u}_1,\dots,\mathbf{u}_r$ in $\mathbb{R}^m$,
@@ -47,8 +47,6 @@ $$
 Note that $\mathbf{u}_i\mathbf{v}_i^T$ is just a column-vector times a row-vector. It has only 1 linearly-independent column. For example $\begin{bmatrix} 1 & 4 & 2\end{bmatrix}^T\begin{bmatrix} 2 & 3 \end{bmatrix} =\begin{bmatrix} 2 & 3 \\ 8 & 12 \\ 4 & 6 \end{bmatrix}$
 
 Each tile $\mathbf{u}_i\mathbf{v}_i^\top$ copies “how much of $\mathbf{v}_i$” is in the input and points it onto “the $\mathbf{u}_i$ direction”, stretching it by $\sigma_i$. 
-
----
 
 ## The right notion of “perpendicular” for matrices
 For matrices, the natural inner product is the **Frobenius** inner product:
@@ -78,7 +76,6 @@ $$
 ---
 
 ## Deconstruction
-
 Keeping only the first \(k\) tiles gives the **best** rank-\(k\) approximation (Eckart–Young):
 $$
 A_k=\sum_{i=1}^k \sigma_i\,\mathbf{u}_i\mathbf{v}_i^\top,

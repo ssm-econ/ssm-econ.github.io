@@ -1,5 +1,5 @@
 ---
-title: 'Filtering, Or why you shouldn't throw away a noisy sensor'
+title: 'Filtering: The Basics'
 date: 2023-10-19
 permalink: /posts/2023/10/filtering/
 excerpt: "An introduction to filtering and sensor fusion"
