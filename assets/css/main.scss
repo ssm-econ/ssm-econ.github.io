@@ -71,15 +71,15 @@ $type-size-9: .875rem;  // ~14px
 $body-line-height: 1.7;
 $heading-line-height: 1.25;
 
-/* Wider left sidebar (fits larger avatar) */
-$left-sidebar-width: 340px;         /* default is smaller; pick your size */
-$left-sidebar-width-narrow: 300px;  /* used on smaller desktop breakpoints */
+/* Left sidebar dimensions */
+$left-sidebar-width: 380px;         /* default is smaller; pick your size */
+$left-sidebar-width-narrow: 360px;  /* used on smaller desktop breakpoints */
 
 /* Load the skin, then the theme (Liquid injects the skin name) */
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
-/* Slightly smaller author sidebar text */
+/* Author sidebar text */
 .sidebar { font-size: 0.95rem; }          /* was 1rem in our earlier setup */
 .sidebar .author__content { font-size: 0.95em; }
 .sidebar .author__urls a { font-size: 0.95em; }
@@ -89,14 +89,14 @@ $left-sidebar-width-narrow: 300px;  /* used on smaller desktop breakpoints */
   .sidebar { font-size: 0.9375rem; }      /* ~15px */
 }
 
-/* Bigger profile picture (author avatar) */
+/* Author avatar */
 .author__avatar img {
-  width: 120px;        /* was ~100–120px by default */
-  max-width: 120px;
-  height: auto;        /* keep aspect ratio */
-  border-radius: 50%;  /* stay circular even if source isn't perfectly square */
+  width: 180px;       /* or 200px if you prefer */
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
   display: block;
-  margin: 0 auto;      /* keep it centered */
+  margin: 0 auto;
 }
 
 /* Optional: responsive sizing */
