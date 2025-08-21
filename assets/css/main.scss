@@ -72,8 +72,8 @@ $body-line-height: 1.7;
 $heading-line-height: 1.25;
 
 /* Left sidebar dimensions */
-$left-sidebar-width: 380px;         /* default is smaller; pick your size */
-$left-sidebar-width-narrow: 360px;  /* used on smaller desktop breakpoints */
+/*$left-sidebar-width: 380px;          default is smaller; pick your size */
+/*$left-sidebar-width-narrow: 360px;   used on smaller desktop breakpoints */
 
 /* Load the skin, then the theme (Liquid injects the skin name) */
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
