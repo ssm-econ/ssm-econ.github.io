@@ -3,9 +3,14 @@ main:
   - title: "Research"
     url: /research/  
 
+  - title: "Teaching"
+    url: /teaching/  
+
   - title: "Blog Posts"
-    url: /year-archive/
+    url: /blog-posts/
     
   - title: "CV"
     url: /files/Resume_23.pdf
+
+
     

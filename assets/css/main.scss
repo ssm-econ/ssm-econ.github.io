@@ -36,6 +36,22 @@
 
 @charset "utf-8";
 
+/* Put Charter everywhere */
+$charter-stack: "Charter Web", "Charter", "Bitstream Charter",
+                "Charis SIL", Georgia, serif;
+
+/* Minimal Mistakes font variables */
+$serif:              $charter-stack;
+$sans-serif:         $charter-stack;        /* nav + many UI bits default to sans */
+$sans-serif-narrow:  $charter-stack;        /* masthead / menu often use this */
+$header-font-family: $charter-stack;        /* headings (H1–H6) */
+$global-font-family: $charter-stack;        /* body text */
+$caption-font-family:$charter-stack;        /* small captions, figure text */
+
+/* keep code monospaced */
+$code-font-family: Menlo, Consolas, Monaco, "Courier New", monospace;
+
+
 /* Use self-hosted Charter everywhere */
 $global-font-family: "Charter Web", "Charter", "Bitstream Charter",
                      "Charis SIL", Georgia, serif;
