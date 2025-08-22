@@ -21,12 +21,7 @@
       url("/assets/fonts/charter-bold.woff2") format("woff2");
   font-weight:700; font-style:bold; font-display:swap;
 }
-@font-face{
-  font-family:"Charter Web";
-  src:local("Charter Bold Italic"), local("Charter-BoldItalic"),
-      url("/assets/fonts/charter-bolditalic.woff2") format("woff2");
-  font-weight:700; font-style:normal; font-display:swap;
-}
+
 
 /* === Typography variables (one source of truth) === */
 $charter-stack: "Charter Web", "Charter", "Bitstream Charter", "Charis SIL", Georgia, serif;
