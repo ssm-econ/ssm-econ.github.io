@@ -80,9 +80,9 @@ $heading-line-height: 1.25;
 @import "minimal-mistakes";
 
 /* Author sidebar text */
-.sidebar { font-size: 0.95rem; }          /* was 1rem in our earlier setup */
-.sidebar .author__content { font-size: 0.95em; }
-.sidebar .author__urls a { font-size: 0.95em; }
+.sidebar { font-size: 0.85rem; }          /* was 1rem in our earlier setup */
+.sidebar .author__content { font-size: 0.85em; }
+.sidebar .author__urls a { font-size: 0.85em; }
 
 
 /* Author avatar */
@@ -103,3 +103,16 @@ $heading-line-height: 1.25;
   .author__avatar img { width: 140px; max-width: 140px; } /* a bit smaller on phones */
 }
 
+/* width you picked for the sidebar */
+$left-sidebar-width: 340px;
+/* extra gap between sidebar and content */
+$left-sidebar-gutter: 20px;
+
+@media (min-width: 64em) {
+  .sidebar { width: $left-sidebar-width; flex: 0 0 $left-sidebar-width; }
+  /* push main content and footer to the right */
+  .initial-content,
+  .page__footer {
+    padding-left: $left-sidebar-width + $left-sidebar-gutter;
+  }
+}
