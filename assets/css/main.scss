@@ -19,13 +19,13 @@
   font-family:"Charter Web";
   src:local("Charter Bold"), local("Charter-Bold"),
       url("/assets/fonts/charter-bold.woff2") format("woff2");
-  font-weight:700; font-style:normal; font-display:swap;
+  font-weight:700; font-style:boldl; font-display:swap;
 }
 @font-face{
   font-family:"Charter Web";
   src:local("Charter Bold Italic"), local("Charter-BoldItalic"),
       url("/assets/fonts/charter-bolditalic.woff2") format("woff2");
-  font-weight:700; font-style:italic; font-display:swap;
+  font-weight:700; font-style:bolditalic; font-display:swap;
 }
 
 /* === Typography variables (one source of truth) === */
@@ -56,9 +56,9 @@ $heading-line-height: 1.25;
 @import "minimal-mistakes";
 
 /* === Tweaks === */
-.sidebar { font-size: 0.90rem; }                 /* slightly smaller sidebar text */
+.sidebar { font-size: 0.70rem; }                 /* slightly smaller sidebar text */
 .sidebar .author__content,
-.sidebar .author__urls a { font-size: 0.95em; }
+.sidebar .author__urls a { font-size: 0.70em; }
 
 /* Bigger, uncropped avatar that respects sidebar width */
 .author__avatar img {
