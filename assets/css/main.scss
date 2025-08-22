@@ -78,15 +78,6 @@ $heading-line-height: 1.25;
   .author__avatar img { width: 140px; }
 }
 
-/* Optional: add a small gap between sidebar and content */
-$left-sidebar-gutter: 20px;
-@media (min-width: 64em) {
-  .initial-content,
-  .page__footer {
-    padding-left: $left-sidebar-width + $left-sidebar-gutter; /* SCSS will output px sum */
-  }
-}
-
 /* Protect math from global fonts (if using MathJax/KaTeX) */
 .mjx-container, .mjx-container * { font-family: unset !important; }
 /* .katex, .katex * { font-family: unset !important; }  // use if you switched to KaTeX */
