@@ -94,6 +94,13 @@ $heading-line-height: 1.25;
   .author__avatar img { width: 140px; }
 }
 
+/* Hide only the GreedyNav toggle (top-left “menu” button) */
+.masthead .greedy-nav__toggle { display: none !important; }
+
+/* Make links wrap instead of collapsing into the hidden menu */
+.masthead .greedy-nav .visible-links { flex-wrap: wrap; }
+.masthead .greedy-nav .hidden-links { display: none !important; }
+
 /* Protect math from global fonts (if using MathJax/KaTeX) */
 .mjx-container, .mjx-container * { font-family: unset !important; }
 /* .katex, .katex * { font-family: unset !important; }  // use if you switched to KaTeX */
