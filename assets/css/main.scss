@@ -50,6 +50,16 @@ $heading-line-height: 1.25;
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
+/* Hide the sidebar’s scrollbar (keeps content visible if it fits) */
+.sidebar {
+  overflow-y: auto;              /* allow scrolling if needed */
+  -ms-overflow-style: none;      /* IE/Edge legacy */
+  scrollbar-width: none;         /* Firefox */
+}
+.sidebar::-webkit-scrollbar {     /* Chrome/Safari */
+  display: none;
+}
+
 /* === Tweaks === */
 .sidebar { font-size: 0.70rem; }                 /* slightly smaller sidebar text */
 .sidebar .author__content,
@@ -64,6 +74,17 @@ $heading-line-height: 1.25;
   display: block;
   margin: 0 auto;
 }
+
+/* Hide follow section, social icons, and any footer link lists */
+.page__footer-follow,
+.page__footer .social-icons,
+.footer__links,
+.footer__col { display: none !important; }
+
+/* Keep just the copyright centered */
+.page__footer { text-align: center; }
+
+
 /* Only make it larger on big screens */
 @media (min-width: 1200px) {
   .author__avatar img { width: 200px; }
