@@ -19,13 +19,13 @@
   font-family:"Charter Web";
   src:local("Charter Bold"), local("Charter-Bold"),
       url("/assets/fonts/charter-bold.woff2") format("woff2");
-  font-weight:700; font-style:boldl; font-display:swap;
+  font-weight:700; font-style:bold; font-display:swap;
 }
 @font-face{
   font-family:"Charter Web";
   src:local("Charter Bold Italic"), local("Charter-BoldItalic"),
       url("/assets/fonts/charter-bolditalic.woff2") format("woff2");
-  font-weight:700; font-style:bolditalic; font-display:swap;
+  font-weight:700; font-style:normal; font-display:swap;
 }
 
 /* === Typography variables (one source of truth) === */
