@@ -1,13 +1,17 @@
+
+
 ---
-title: 'Monte-carlo methods'
+title: 'Monte-carlo integration'
 date: 2023-09-07
-permalink: /posts/2023/09/monte-carlo-methods/
-excerpt: "The science of measurement by rolling dice."
+permalink: /posts/2023/09/monte-carlo-integration/
+excerpt: "The art of measurement by rolling dice."
 tags:
-  - computational methods
-  - estimation and inference
+  - state space methods
+  - bayesian inference
 ---
+
 # Monte Carlo methods
+
 Monte Carlo methods are a broad class of computational algorithms that rely on repeated random sampling to obtain estimates of random variables.
 
 *Measurement by rolling dice...*
@@ -16,7 +20,7 @@ The algorithms have proven extremely useful for situations where solutions to pr
 
 ## From integrals to expectations
 
-Let $U \sim \mathrm{Unif}[a,b]$. We sample $n$ points from the uniform distribution between $a$ and $b$. We evaluate the function $f(.)$ at all $n$ points and calculate the _sample_ average. According to the law of large numbers, for any sequence of *iid* random variables $\{z_i\}_{i=1}^{n}$, define  the sample average$$\bar{Z}_n=\frac{\sum_{i=1}^{n}z_i}{n}$$
+Let $U \sim \mathrm{Unif}[a,b]$. We sample $n$ points from the uniform distribution between $a$ and $b$. We evaluate the function $f(.)$ at all $n$ points and calculate the _sample_ average. According to the law of large numbers, for any sequence of *independent, identically distributed* (iid) random variables $\{z_i\}_{i=1}^{n}$, define  the sample average$$\bar{Z}_n=\frac{\sum_{i=1}^{n}z_i}{n}$$
 $\bar{Z}_n\to \mathbb{E}[Z]$ as $n\to\infty$.
 
 If $x$ is a random variable with probability distribution function $p(x)$,  the expectation of a $f(x)$ is given by
@@ -28,7 +32,7 @@ $$
 \int_a^b f(x)\,dx \;=\; (b-a)\,\mathbb{E}[f(U)].
 $$
 
-This identity lets us turn integration into averaging: sample $U_i$ uniformly on $[a,b]$, evaluate $f(U_i)$. $U_i$'s are *independent, identically distributed* (iid) random variables. Since a function of a iid random variable is also a random variable, we have that:
+This identity lets us turn integration into averaging: sample $U_i$ uniformly on $[a,b]$, evaluate $f(U_i)$. $U_i$'s are *iid* random variables. Since a function of a iid random variable is also a random variable, we have that:
 
 
 Given *i.i.d*. $U_1,\dots,U_n \sim \mathrm{Unif}[a,b]$,
@@ -49,8 +53,6 @@ Halving the error typically costs ~4× more samples.
 Let $y_i=f(U_i)$ $\bar y=\frac1n\sum y_i$, $s^2=\frac{1}{n-1}\sum(y_i-\bar y)^2$.  
 MC standard error: $\text{SE} = (b-a)\, s/\sqrt{n}$.  
 A ~95% CI is $\hat I_n \pm 1.96\,\text{SE}$.
-
----
 
 ## Minimal code 
 
@@ -150,10 +152,11 @@ if __name__ == "__main__":
     print(f"Monte Carlo estimate: {p_hat:.6f}")
     print(f"Std. error: {se:.6f}")
     print(f"95% CI: [{ci[0]:.6f}, {ci[1]:.6f}]")
-  ```  
+    ``` 
 
 
 ## Importance sampling
+
 So far we have restricted attention to samples generated from the uniform distribution. And for good reason! It's rather simple and intuitive. However we can do "better". We can reduce the variance of our estimates by sampling efficiently. 
 
 Pick any pdf $p(x)$ on $[a,b]$ with $p(x)>0$ wherever $f(x)\neq 0$. Then re-write the integral using a "trick". 
@@ -176,9 +179,7 @@ $$
 =\frac{1}{n}\!\left(\int_a^b \frac{f(x)^2}{p(x)}\,dx-\Big(\int_a^b f(x)\,dx\Big)^2\right).
 $$
 
-Compared to uniform, we can **lower this variance** by choosing $p$ that puts *more mass where $|f|$ is large* (and with tails heavy enough when the domain is unbounded).
-
----
+Compared to the uniform distribution, we can **lower this variance** by choosing $p$ that puts *more mass where $|f|$ is large* (and with tails heavy enough when the domain is unbounded).
 
 ## “Best” choice (and why)
 
@@ -188,9 +189,9 @@ p^*(x)\propto |f(x)|.
 $$
 
 If $f\ge 0$, then $p^*(x)\propto f(x)$ makes the weight $f(x)/p^*(x)$ a **constant**, i.e., **zero variance**.  
+
 In practice you can’t use $p^*$ exactly because normalizing it requires the very integral you’re computing—but it tells you what *shape* to aim for.
 
----
 
 ## Efficient Monte Carlo sampling 
 
@@ -206,12 +207,10 @@ import numpy as np
 
 def f(x): return x**2
 
-# Importance sampling with p(x) = Beta(3,1)  => pdf p(x)=3x^2 on [0,1]
+#Importance sampling with p(x) = Beta(3,1)  => pdf p(x)=3x^2 on [0,1]
 rng = np.random.default_rng(0)
 x = rng.beta(3, 1, size=10_000)      # draw from p
 w = f(x) / (3 * x**2)                # f(x)/p(x)
 print("IS estimate:", w.mean())      # always ~ 1/3
-``
-
-
+```
 
