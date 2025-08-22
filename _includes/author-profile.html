@@ -1,123 +1,188 @@
-{% include base_path %}
-
-{% if page.author and site.data.authors[page.author] %}
-  {% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.author %}
-{% endif %}
-
-<div itemscope itemtype="http://schema.org/Person">
-
-  <div class="author__avatar">
-    {% if author.avatar contains "://" %}
-    	<img src="{{ author.avatar }}" alt="{{ author.name }}">
-    {% else %}
-    	<img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}">
-    {% endif %}
-  </div>
-
-  <div class="author__content">
-    <h3 class="author__name">{{ author.name }}</h3>
-    {% if author.bio %}<p class="author__bio">{{ author.bio }}</p>{% endif %}
-  </div>
-
-  <div class="author__urls-wrapper">
-    <button class="btn btn--inverse">Follow</button>
-    <ul class="author__urls social-icons">
-      {% if author.location %}
-        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ author.location }}</li>
-      {% endif %}
-      {% if author.employer %}
-        <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ author.employer }}</li>
-      {% endif %}
-      {% if author.uri %}
-        <li><a href="{{ author.uri }}"><i class="fas fa-fw fa-link" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].website_label | default: "Website" }}</a></li>
-      {% endif %}
-      {% if author.email %}
-        <li><a href="mailto:{{ author.email }}"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> {{ site.data.ui-text[site.locale].email_label | default: "Email" }}</a></li>
-      {% endif %}
-      {% if author.keybase %}
-        <li><a href="https://keybase.io/{{ author.keybase }}"><i class="fas fa-fw fa-key" aria-hidden="true"></i> Keybase</a></li>
-      {% endif %}
-       {% if author.researchgate %}
-        <li><a href="{{ author.researchgate }}"><i class="fab fa-fw fa-researchgate" aria-hidden="true"></i> ResearchGate</a></li>
-      {% endif %}
-      {% if author.twitter %}
-        <li><a href="https://twitter.com/{{ author.twitter }}"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
-      {% endif %}
-      {% if author.facebook %}
-        <li><a href="https://www.facebook.com/{{ author.facebook }}"><i class="fab fa-fw fa-facebook-square" aria-hidden="true"></i> Facebook</a></li>
-      {% endif %}
-      {% if author.google_plus %}
-        <li><a href="https://plus.google.com/+{{ author.google_plus }}"><i class="fab fa-fw fa-google-plus" aria-hidden="true"></i> Google+</a></li>
-      {% endif %}
-      {% if author.linkedin %}
-        <li><a href="https://www.linkedin.com/in/{{ author.linkedin }}"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
-      {% endif %}
-      {% if author.xing %}
-        <li><a href="https://www.xing.com/profile/{{ author.xing }}"><i class="fab fa-fw fa-xing-square" aria-hidden="true"></i> XING</a></li>
-      {% endif %}
-      {% if author.instagram %}
-        <li><a href="https://instagram.com/{{ author.instagram }}"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
-      {% endif %}
-      {% if author.tumblr %}
-        <li><a href="https://{{ author.tumblr }}.tumblr.com"><i class="fab fa-fw fa-tumblr-square" aria-hidden="true"></i> Tumblr</a></li>
-      {% endif %}
-      {% if author.bitbucket %}
-        <li><a href="https://bitbucket.org/{{ author.bitbucket }}"><i class="fab fa-fw fa-bitbucket" aria-hidden="true"></i> Bitbucket</a></li>
-      {% endif %}
-      {% if author.github %}
-        <li><a href="https://github.com/{{ author.github }}"><i class="fab fa-fw fa-github" aria-hidden="true"></i> Github</a></li>
-      {% endif %}
-      {% if author.stackoverflow %}
-        <li><a href="https://www.stackoverflow.com/users/{{ author.stackoverflow }}"><i class="fab fa-fw fa-stack-overflow" aria-hidden="true"></i> Stackoverflow</a></li>
-      {% endif %}
-      {% if author.lastfm %}
-        <li><a href="https://lastfm.com/user/{{ author.lastfm }}"><i class="fab fa-fw fa-lastfm-square" aria-hidden="true"></i> Last.fm</a></li>
-      {% endif %}
-      {% if author.dribbble %}
-        <li><a href="https://dribbble.com/{{ author.dribbble }}"><i class="fab fa-fw fa-dribbble-square" aria-hidden="true"></i> Dribbble</a></li>
-      {% endif %}
-      {% if author.pinterest %}
-        <li><a href="https://www.pinterest.com/{{ author.pinterest }}"><i class="fab fa-fw fa-pinterest" aria-hidden="true"></i> Pinterest</a></li>
-      {% endif %}
-      {% if author.foursquare %}
-        <li><a href="https://foursquare.com/{{ author.foursquare }}"><i class="fab fa-fw fa-foursquare" aria-hidden="true"></i> Foursquare</a></li>
-      {% endif %}
-      {% if author.steam %}
-        <li><a href="https://steamcommunity.com/id/{{ author.steam }}"><i class="fab fa-fw fa-steam-square" aria-hidden="true"></i> Steam</a></li>
-      {% endif %}
-      {% if author.youtube %}
-        <li><a href="https://www.youtube.com/user/{{ author.youtube }}"><i class="fab fa-fw fa-youtube" aria-hidden="true"></i> YouTube</a></li>
-      {% endif %}
-      {% if author.soundcloud %}
-        <li><a href="https://soundcloud.com/{{ author.soundcloud }}"><i class="fab fa-fw fa-soundcloud" aria-hidden="true"></i> Soundcloud</a></li>
-      {% endif %}
-      {% if author.weibo %}
-        <li><a href="https://www.weibo.com/{{ author.weibo }}"><i class="fab fa-fw fa-weibo" aria-hidden="true"></i> Weibo</a></li>
-      {% endif %}
-      {% if author.flickr %}
-        <li><a href="https://www.flickr.com/{{ author.flickr }}"><i class="fab fa-fw fa-flickr" aria-hidden="true"></i> Flickr</a></li>
-      {% endif %}
-      {% if author.codepen %}
-        <li><a href="https://codepen.io/{{ author.codepen }}"><i class="fab fa-fw fa-codepen" aria-hidden="true"></i> CodePen</a></li>
-      {% endif %}
-      {% if author.vine %}
-        <li><a href="https://vine.co/u/{{ author.vine }}"><i class="fab fa-fw fa-vine" aria-hidden="true"></i> Vine</a></li>
-      {% endif %}
-      {% if author.googlescholar %}
-        <li><a href="{{ author.googlescholar }}"><i class="fas fa-fw fa-graduation-cap"></i> Google Scholar</a></li>
-      {% endif %}
-      {% if author.pubmed %}
-        <li><a href="{{ author.pubmed }}"><i class="ai ai-pubmed-square ai-fw"></i> PubMed</a></li>
-      {% endif %}
-      {% if author.orcid %}
-        <li><a href="{{ author.orcid }}"><i class="ai ai-orcid-square ai-fw"></i> ORCID</a></li>
-      {% endif %}
-      {% if author.impactstory %}
-        <li><a href="{{ author.impactstory }}"><i class="ai ai-impactstory ai-fw"></i> Impactstory</a></li>
-      {% endif %}
-      {% if author.wikipedia %}
-        <li><a href="https://en.wikipedia.org/wiki/User:{{ author.wikipedia }}"><i class="fab fa-fw fa-wikipedia-w" aria-hidden="true"></i> Wikipedia</a></li>
-{% endif %}
-    </ul>
-  </div>
-</div>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.5">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 12.0px Times; -webkit-text-stroke: #000000; min-height: 14.0px}
+    span.s1 {font-kerning: none}
+    span.Apple-tab-span {white-space:pre}
+  </style>
+</head>
+<body>
+<p class="p1"><span class="s1">{% include base_path %}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">{% if page.author and site.data.authors[page.author] %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>{% assign author = site.data.authors[page.author] %}{% else %}{% assign author = site.author %}</span></p>
+<p class="p1"><span class="s1">{% endif %}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1">&lt;div itemscope itemtype="http://schema.org/Person"&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="author__avatar"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{% if author.avatar contains "://" %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    <span class="Apple-tab-span">	</span></span>&lt;img src="{{ author.avatar }}" alt="{{ author.name }}"<span class="Apple-converted-space">  </span>fetchpriority="high" /&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{% else %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    <span class="Apple-tab-span">	</span></span>&lt;img src="{{ author.avatar | prepend: "/images/" | prepend: base_path }}" class="author__avatar" alt="{{ author.name }}"<span class="Apple-converted-space">  </span>fetchpriority="high" /&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{% endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="author__content"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;h3 class="author__name"&gt;{{ author.name }}&lt;/h3&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{% if author.pronouns %}&lt;p class="author__pronouns"&gt;{{ author.pronouns }}&lt;/p&gt;{% endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>{% if author.bio %}&lt;p class="author__bio"&gt;{{ author.bio }}&lt;/p&gt;{% endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;div class="author__urls-wrapper"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;button class="btn btn--inverse"&gt;Follow&lt;/button&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;ul class="author__urls social-icons"&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;!-- Font Awesome icons / Biographic information<span class="Apple-converted-space">  </span>--&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.location %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li class="author__desktop"&gt;&lt;i class="fas fa-fw fa-location-dot icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;{{ author.location }}&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.employer %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li class="author__desktop"&gt;&lt;i class="fas fa-fw fa-building-columns icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;{{ author.employer }}&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.uri %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="{{ author.uri }}"&gt;&lt;i class="fas fa-fw fa-link icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;{{ site.data.ui-text[site.locale].website_label | default: "Website" }}&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.email %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="mailto:{{ author.email }}"&gt;&lt;i class="fas fa-fw fa-envelope icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;{{ site.data.ui-text[site.locale].email_label | default: "Email" }}&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;!-- Font Awesome and Academicons icons / Academic websites --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.academia %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="{{ author.academia }}"&gt;&lt;i class="ai ai-academia ai-fw icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;Academia&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.arxiv %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="{{ author.arxiv }}"&gt;&lt;i class="ai ai-arxiv ai-fw icon-pad-right"&gt;&lt;/i&gt;arXiv&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %} <span class="Apple-converted-space">     </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.googlescholar %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="{{ author.googlescholar }}"&gt;&lt;i class="ai ai-google-scholar ai-fw icon-pad-right"&gt;&lt;/i&gt;Google Scholar&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.semantic %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="{{ author.semantic }}"&gt;&lt;i class="ai ai-semantic-scholar ai-fw icon-pad-right"&gt;&lt;/i&gt;Semantic Scholar&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.impactstory %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="{{ author.impactstory }}"&gt;&lt;i class="ai ai-impactstory ai-fw icon-pad-right"&gt;&lt;/i&gt;Impactstory&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.orcid %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="{{ author.orcid }}"&gt;&lt;i class="ai ai-orcid ai-fw icon-pad-right"&gt;&lt;/i&gt;ORCID&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.pubmed %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="{{ author.pubmed }}"&gt;&lt;i class="ai ai-pubmed ai-fw icon-pad-right"&gt;&lt;/i&gt;PubMed&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %} <span class="Apple-converted-space">                       </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.researchgate %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="{{ author.researchgate }}"&gt;&lt;i class="fab fa-fw fa-researchgate icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;ResearchGate&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.scopus %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="{{ author.scopus }}"&gt;&lt;i class="ai ai-scopus ai-fw icon-pad-right"&gt;&lt;/i&gt;Scopus&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.inspire-hep %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="{{ author.inspire-hep }}"&gt;&lt;i class="ai ai-inspire ai-fw icon-pad-right"&gt;&lt;/i&gt;INSPIRE-HEP&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %}</span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;!-- Font Awesome icons / Repositories and software development --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.bitbucket %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="https://bitbucket.org/{{ author.bitbucket }}"&gt;&lt;i class="fab fa-fw fa-bitbucket icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;Bitbucket&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.codepen %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="https://codepen.io/{{ author.codepen }}"&gt;&lt;i class="fab fa-fw fa-codepen icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;CodePen&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %} <span class="Apple-converted-space">     </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.dribbble %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="https://dribbble.com/{{ author.dribbble }}"&gt;&lt;i class="fab fa-fw fa-dribbble icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;Dribbble&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %} <span class="Apple-converted-space">     </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.github %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="https://github.com/{{ author.github }}"&gt;&lt;i class="fab fa-fw fa-github icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;GitHub&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.kaggle %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="https://kaggle.com/{{ author.kaggle }}"&gt;&lt;i class="fab fa-fw fa-kaggle icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;Kaggle&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %} <span class="Apple-converted-space">     </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.stackoverflow %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="https://www.stackoverflow.com/users/{{ author.stackoverflow }}"&gt;&lt;i class="fab fa-fw fa-stack-overflow icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;Stackoverflow&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %} <span class="Apple-converted-space">     </span></span></p>
+<p class="p2"><span class="s1"></span><br></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;!-- Font Awesome icons / Social media --&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.artstation %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="https://www.artstation.com/{{ author.artstation }}"&gt;&lt;i class="fab fa-fw fa-artstation icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;Artstation&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %} <span class="Apple-converted-space">       </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.bluesky %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="https://bsky.app/profile/{{ author.bluesky }}"&gt;&lt;i class="fab fa-fw fa-bluesky icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;Bluesky&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.facebook %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="https://www.facebook.com/{{ author.facebook }}"&gt;&lt;i class="fab fa-fw fa-facebook-f icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;Facebook&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.flickr %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="https://www.flickr.com/{{ author.flickr }}"&gt;&lt;i class="fab fa-fw fa-flickr icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;Flickr&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %} <span class="Apple-converted-space">     </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.foursquare %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="https://foursquare.com/{{ author.foursquare }}"&gt;&lt;i class="fab fa-fw fa-foursquare icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;Foursquare&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.goodreads %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="https://www.goodreads.com/{{ author.goodreads }}"&gt;&lt;i class="fab fa-fw fa-goodreads icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;Goodreads&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %} <span class="Apple-converted-space">           </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.google_plus %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="https://plus.google.com/+{{ author.google_plus }}"&gt;&lt;i class="fab fa-fw fa-google-plus-g icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;Google+&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %} <span class="Apple-converted-space">           </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.keybase %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="https://keybase.io/{{ author.keybase }}"&gt;&lt;i class="fas fa-fw fa-key icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;Keybase&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.instagram %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="https://instagram.com/{{ author.instagram }}"&gt;&lt;i class="fab fa-fw fa-instagram icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;Instagram&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %} <span class="Apple-converted-space">     </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.lastfm %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="https://last.fm/user/{{ author.lastfm }}"&gt;&lt;i class="fab fa-fw fa-lastfm icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;Last.fm&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %} <span class="Apple-converted-space">     </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.linkedin %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="https://www.linkedin.com/in/{{ author.linkedin }}"&gt;&lt;i class="fab fa-fw fa-linkedin icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;LinkedIn&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %} <span class="Apple-converted-space">     </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.mastodon %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="{{ author.mastodon }}"&gt;&lt;i class="fab fa-fw fa-mastodon icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;Mastodon&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.medium %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="{{ author.medium }}"&gt;&lt;i class="fab fa-fw fa-medium icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;Medium&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %} <span class="Apple-converted-space">     </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.pinterest %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="https://www.pinterest.com/{{ author.pinterest }}"&gt;&lt;i class="fab fa-fw fa-pinterest icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;Pinterest&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %} <span class="Apple-converted-space">           </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.soundcloud %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="https://soundcloud.com/{{ author.soundcloud }}"&gt;&lt;i class="fab fa-fw fa-soundcloud icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;Soundcloud&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %} <span class="Apple-converted-space">     </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.steam %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="https://steamcommunity.com/id/{{ author.steam }}"&gt;&lt;i class="fab fa-fw fa-steam icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;Steam&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.telegram %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="{{ author.telegram }}"&gt;&lt;i class="fab fa-fw fa-telegram icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;Telegram&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %} <span class="Apple-converted-space">     </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.tumblr %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="https://{{ author.tumblr }}.tumblr.com"&gt;&lt;i class="fab fa-fw fa-tumblr icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;Tumblr&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %} <span class="Apple-converted-space">     </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.twitter %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="https://twitter.com/{{ author.twitter }}"&gt;&lt;i class="fab fa-fw fa-x-twitter icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;X (formerly Twitter)&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.vine %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="https://vine.co/u/{{ author.vine }}"&gt;&lt;i class="fab fa-fw fa-vine icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;Vine&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %} <span class="Apple-converted-space">       </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.weibo %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="https://www.weibo.com/{{ author.weibo }}"&gt;&lt;i class="fab fa-fw fa-weibo icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;Weibo&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.wikipedia %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="https://en.wikipedia.org/wiki/User:{{ author.wikipedia }}"&gt;&lt;i class="fab fa-fw fa-wikipedia-w icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;Wikipedia&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %} <span class="Apple-converted-space">               </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.xing %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="https://www.xing.com/profile/{{ author.xing }}"&gt;&lt;i class="fab fa-fw fa-xing icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;XING&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.youtube %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">        </span>&lt;li&gt;&lt;a href="https://www.youtube.com/@{{ author.youtube }}"&gt;&lt;i class="fab fa-fw fa-youtube icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;YouTube&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% if author.zhihu %}</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>&lt;li&gt;&lt;a href="https://www.zhihu.com/people/{{ author.zhihu }}"&gt;&lt;i class="fab fa-fw fa-zhihu icon-pad-right" aria-hidden="true"&gt;&lt;/i&gt;Zhihu&lt;/a&gt;&lt;/li&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">      </span>{% endif %} <span class="Apple-converted-space">     </span></span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">    </span>&lt;/ul&gt;</span></p>
+<p class="p1"><span class="s1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</span></p>
+<p class="p1"><span class="s1">&lt;/div&gt;</span></p>
+</body>
+</html>
