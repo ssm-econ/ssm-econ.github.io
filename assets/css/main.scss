@@ -50,6 +50,8 @@ $heading-line-height: 1.25;
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
+@import "vendor/font-awesome/brands"
+
 /* Hide the sidebar’s scrollbar (keeps content visible if it fits) */
 .sidebar {
   overflow-y: auto;              /* allow scrolling if needed */
