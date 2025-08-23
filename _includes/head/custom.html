@@ -29,4 +29,26 @@
       .forEach(el => el.remove());
   });
 </script>
-  
+<!-- Remove the GreedyNav toggle completely -->
+<style>
+  /* hide immediately (even before JS runs) */
+  #site-nav.greedy-nav > button,
+  .masthead .greedy-nav > button,
+  .masthead .greedy-nav__toggle { display: none !important; }
+  /* never show the overflow menu either */
+  .masthead .greedy-nav .hidden-links { display: none !important; }
+  /* let visible links wrap when needed */
+  .masthead .greedy-nav .visible-links { flex-wrap: wrap; }
+</style>
+<script>
+  // delete the button node(s) in case CSS gets overridden by something
+  document.addEventListener('DOMContentLoaded', () => {
+    const nav = document.querySelector('#site-nav.greedy-nav') || document.querySelector('.masthead .greedy-nav');
+    if (nav) {
+      // remove a specifically named toggle and any direct button children
+      nav.querySelectorAll('.greedy-nav__toggle, :scope > button').forEach(btn => btn.remove());
+      // also remove the dropdown list if present
+      nav.querySelectorAll('.hidden-links').forEach(el => el.remove());
+    }
+  });
+</script>
