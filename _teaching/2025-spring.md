@@ -8,21 +8,13 @@
 
 \f0\fs26 \cf0 \expnd0\expndtw0\kerning0
 \outl0\strokewidth0 \strokec2 ---\
-title: "Teaching experience 1"\
+title: "Teaching Assistant\'94\
 collection: teaching\
 type: \'93Master\'92s Level\'94\
 permalink: /teaching/2025-spring\
 venue: \'93UT Austin, Economics Deptt.\'94\
+instructor: \'93Edward Kruger\'94\
 ---\
 \
-This is a description of a teaching experience. You can use markdown like any other post.\
 \
-Heading 1\
-======\
-\
-Heading 2\
-======\
-\
-Heading 3\
-======\
 }
