@@ -18,11 +18,15 @@
 </script>
 <script async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 <style>
-  .masthead .greedy-nav > button.greedy-nav__toggle,
+  /* Hide immediately to avoid any flicker */
   .masthead .greedy-nav__toggle,
-  .masthead .greedy-nav__toggle .navicon{display:none!important;visibility:hidden!important;pointer-events:none!important}
-  .masthead .greedy-nav .hidden-links{display:none!important}
-  .masthead .greedy-nav .visible-links{flex-wrap:wrap}
-  .masthead .greedy-nav{overflow:visible}
-</style>
+  .masthead .greedy-nav .hidden-links { display: none !important; }
+  </style>
+  <script>
+  /* Remove the button (and its overflow menu) from the DOM */
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('.greedy-nav__toggle, .greedy-nav .hidden-links')
+      .forEach(el => el.remove());
+  });
+</script>
   
