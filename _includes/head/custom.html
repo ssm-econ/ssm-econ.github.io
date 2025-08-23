@@ -1,12 +1,18 @@
+<!-- Academicons (for Scholar, ORCID, etc.) -->
 <link rel="stylesheet" href="{{ '/assets/css/academicons.css' | relative_url }}">
-<!-- MathJax v3: TeX → SVG (font independent) -->
+
+<!-- Font Awesome 6 Free (brands + solid) for sidebar icons -->
+<link rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+
+<!-- MathJax v3: render TeX as SVG (independent of site fonts like Charter) -->
 <script>
   window.MathJax = {
     tex: {
       inlineMath: [['$', '$'], ['\\(', '\\)']],
       displayMath: [['$$','$$'], ['\\[','\\]']]
     },
-    svg: { fontCache: 'global' },  /* fast + crisp */
+    svg: { fontCache: 'global' },
     options: { skipHtmlTags: ['script','noscript','style','textarea','pre','code'] }
   };
 </script>
