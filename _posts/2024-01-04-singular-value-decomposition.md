@@ -43,22 +43,28 @@ $$
 A=\sum_{i=1}^r \sigma_i\,\mathbf{u}_i\mathbf{v}_i^T.
 $$
 
-Note that $\mathbf{u}_i\mathbf{v}_i^T$ is just a column-vector times a row-vector. It has only 1 linearly-independent column. For example $\begin{bmatrix} 1 & 4 & 2\end{bmatrix}^T\begin{bmatrix} 2 & 3 \end{bmatrix} =\begin{bmatrix} 2 & 3 \\ 8 & 12 \\ 4 & 6 \end{bmatrix}$
+Note that $\mathbf{u}_i\mathbf{v}_i^T$ is just a column-vector times a row-vector. It has only 1 linearly-independent column. For example 
+
+$$\begin{bmatrix}1&4&2\end{bmatrix}^T\begin{bmatrix}2&3\end{bmatrix} =\begin{bmatrix}2&3\\8&12\\4&6\end{bmatrix}$$
 
 Each tile $\mathbf{u}_i\mathbf{v}_i^\top$ copies “how much of $\mathbf{v}_i$” is in the input and points it onto “the $\mathbf{u}_i$ direction”, stretching it by $\sigma_i$. 
 
 ## The right notion of “perpendicular” for matrices
 For matrices, the natural inner product is the **Frobenius** inner product:
+
 $$
 \langle X,Y\rangle_F=\mathrm{tr}(X^\top Y)=\sum_{i,j}X_{ij}Y_{ij},
 \qquad
 \|X\|_F^2=\langle X,X\rangle_F.
 $$
+
 Under this inner product, the SVD tiles are mutually orthogonal:
+
 $$
 \big\langle \mathbf{u}_i\mathbf{v}_i^\top,\ \mathbf{u}_j\mathbf{v}_j^\top\big\rangle_F
 =(\mathbf{u}_i^\top\mathbf{u}_j)(\mathbf{v}_i^\top\mathbf{v}_j)=\delta_{ij}.
 $$
+
 So SVD really is an **orthonormal expansion** of a matrix.
 
 ---
@@ -70,6 +76,7 @@ $$
 =\Big\|\sum_{i=1}^r \sigma_i\,\mathbf{u}_i\mathbf{v}_i^\top\Big\|_F^2
 =\sum_{i=1}^r \sigma_i^2.
 $$
+
 **Interpretation**: if you think of $A$ as an image, $\|A\|_F^2$ is the total brightness squared; SVD splits that brightness into independent, non-overlapping beams of strength $\sigma_i^2$.
 
 ---
