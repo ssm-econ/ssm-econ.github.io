@@ -96,12 +96,20 @@ $heading-line-height: 1.25;
   .author__avatar img { width: 140px; }
 }
 
-/* Hide only the GreedyNav toggle (top-left “menu” button) */
-.masthead .greedy-nav__toggle { display: none !important; }
+/* Hide ONLY the GreedyNav toggle button and its overflow menu */
+.masthead .greedy-nav > button.greedy-nav__toggle,
+.masthead .greedy-nav__toggle,
+.masthead .greedy-nav__toggle .navicon { 
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
 
-/* Make links wrap instead of collapsing into the hidden menu */
-.masthead .greedy-nav .visible-links { flex-wrap: wrap; }
+/* Never show the overflow dropdown; let links wrap instead */
 .masthead .greedy-nav .hidden-links { display: none !important; }
+.masthead .greedy-nav .visible-links { flex-wrap: wrap; }
+.masthead .greedy-nav { overflow: visible; }
+
 
 /* Protect math from global fonts (if using MathJax/KaTeX) */
 .mjx-container, .mjx-container * { font-family: unset !important; }
