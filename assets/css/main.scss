@@ -96,14 +96,6 @@ $heading-line-height: 1.25;
   .author__avatar img { width: 140px; }
 }
 
-/* Hide ONLY the GreedyNav toggle button and its overflow menu */
-.masthead .greedy-nav > button.greedy-nav__toggle,
-.masthead .greedy-nav__toggle,
-.masthead .greedy-nav__toggle .navicon { 
-  display: none !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
-}
 
 /* Never show the overflow dropdown; let links wrap instead */
 .masthead .greedy-nav .hidden-links { display: none !important; }
