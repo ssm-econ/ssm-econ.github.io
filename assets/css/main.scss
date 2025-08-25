@@ -103,12 +103,14 @@ $heading-line-height: 1.25;
 .mjx-container, .mjx-container * { font-family: unset !important; }
 /* .katex, .katex * { font-family: unset !important; }  // use if you switched to KaTeX */
 
-
+.sidebar .author__urls li {
+  font-size: 0.82rem; 
+}
 
 .sidebar .author__urls a { 
-  font-size: 0.25rem; 
+  font-size: 0.82rem; 
 }
 
 .sidebar .author__urls i { 
-  font-size: 0.25rem; 
+  font-size: 0.82rem; 
 }
