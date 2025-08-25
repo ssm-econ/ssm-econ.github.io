@@ -103,13 +103,7 @@ $heading-line-height: 1.25;
 .mjx-container, .mjx-container * { font-family: unset !important; }
 /* .katex, .katex * { font-family: unset !important; }  // use if you switched to KaTeX */
 
-/* Let FA keep its own font families */
-.author__urls i.fas, .author__urls i.fa, .author__urls .fa-solid {
-  font-family: "Font Awesome 5 Free" !important; font-weight: 900;
-}
-.author__urls i.fab, .author__urls .fa-brands {
-  font-family: "Font Awesome 5 Brands" !important; font-weight: 400;
-}
+
 
 .sidebar .author__urls a { 
   font-size: 0.25rem; 
