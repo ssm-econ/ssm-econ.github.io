@@ -113,3 +113,24 @@ sidebar { font-size: 0.70rem; }                 /* slightly smaller sidebar text
 .author__urls i.fab, .author__urls .fa-brands {
   font-family: "Font Awesome 5 Brands" !important; font-weight: 400;
 }
+
+/* Compact sidebar: location + links */
+.sidebar .author__urls,
+.sidebar .author__content,
+.sidebar .author__urls li.author__desktop {
+  font-size: 0.82rem;   /* adjust: 0.78–0.88rem to taste */
+  line-height: 1.35;
+}
+
+/* (optional) slightly tighter spacing between link rows */
+.sidebar .author__urls li { margin: 0.25rem 0; }
+
+/* If the icons feel too tiny after shrink, bump JUST the icon size a touch */
+.sidebar .author__urls i { font-size: 0.95em; }  /* remove if you want icons to shrink equally */
+
+/* Keep it a bit larger on small screens so it’s not too tiny */
+@media (max-width: 600px) {
+  .sidebar .author__urls,
+  .sidebar .author__content,
+  .sidebar .author__urls li.author__desktop { font-size: 0.9rem; }
+}
