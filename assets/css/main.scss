@@ -63,8 +63,8 @@ $heading-line-height: 1.25;
 }
 
 /* === Tweaks === */
-/*.sidebar { font-size: 0.70rem; }     */            /* slightly smaller sidebar text */
-/*.sidebar .author__urls a { font-size: 0.70em; }*/
+sidebar { font-size: 0.70rem; }                 /* slightly smaller sidebar text */
+.sidebar .author__urls a {font-size: 0.70em;}
 
 /* Bigger, uncropped avatar that respects sidebar width */
 .author__avatar img {
