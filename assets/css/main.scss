@@ -64,7 +64,7 @@ $heading-line-height: 1.25;
 
 /* === Tweaks === */
 sidebar { font-size: 0.70rem; }                 /* slightly smaller sidebar text */
-.sidebar .author__urls a {font-size: 0.70em;}
+.sidebar .author__urls li.author__desktop + li { margin-top: 0.6rem; }
 
 /* Bigger, uncropped avatar that respects sidebar width */
 .author__avatar img {
