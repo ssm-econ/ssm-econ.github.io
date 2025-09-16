@@ -8,10 +8,11 @@ redirect_from:
   - /teaching.md
 ---
 
-I have had the great opportunity to work with exemplary instructors and brilliant students as a teaching assistant at UT. I have been involved in teaching the following courses: (including course evaluations wherever available)
-
+I have had the great opportunity to work with exemplary instructors and brilliant students as a teaching assistant at UT. I have been involved in teaching the following courses: 
 1. Data Mining and Statistical Learning *Instructor: Edward Kruger* Spring 2025 
 2. Python, Databases and Big Data *Instructor: Edward Kruger* Fall 2025, Fall 2024, Fall 2023, Fall 2022 [Evaluations](/files/TA Evals/Fa_2022.pdf)
 3. Introduction to Macroeconomics *Instructor: Wayne Greeling* Spring 2024 [Evaluations](/files/TA Evals/Sp_2024.pdf) 
 4. Energy Economics *Instructor: Michael Sadler*  Spring 2023 [Evaluations](/files/TA Evals/Sp_2023.pdf)
 5. Urban Economics *Instructor: Dr. Andrew Waxman* Spring 2022 [Evaluations](/files/TA Evals/Sp_2022.pdf)
+
+[Teaching Statement]](/files/Teaching Statement.pdf)
