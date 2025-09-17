@@ -6,3 +6,7 @@ gem "jekyll-remote-theme"                      # for local 'serve' with remote t
 group :development do
   gem "webrick"                                # needed for Ruby >= 3
 end
+
+group :jekyll_plugins do
+  gem "jekyll-seo-tag"
+end
