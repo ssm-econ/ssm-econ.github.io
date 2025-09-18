@@ -16,7 +16,7 @@ plugins:
 locale                   : "en-US"
 title                    : "Personal Website"
 title_separator          : "-"
-name                     : &name "Shreeyesh Menon"
+name                     : &name ""
 description              : &description "Econ PhD Student @ UT Austin"
 url                      : https://ssm-econ.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
