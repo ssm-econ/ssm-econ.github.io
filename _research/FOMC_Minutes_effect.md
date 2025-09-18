@@ -3,7 +3,7 @@ title: "Bond market response to FOMC communication: Overreaction to Forward Guid
 collection: research
 permalink: /research/FOMC_Minutes_Effect
 excerpt: 
-date: 
+date: 2024-07-24
 venue: 
 paperurl:
 citation: 

@@ -3,7 +3,7 @@ title: "Learning, Changing perceptions and the Anchoring of Expectations in the 
 category: research
 permalink: /research/Learning_and_Anchoring
 excerpt: This paper explains U.S. post-war inflation and unemployment dynamics through a model of structural learning by private agents. Agents reason about observed macroeconomic realizations of the aggregate inflation rate, unemployment rate and the nominal interest rate based on New-Keynesian primitives, internalizing how aggregate outcomes are determined in equilibrium from individual optimizing behavior.
-date: 
+date: 2025-09-17
 venue: 
 paperurl: http://ssm-econ.github.io/files/Learning_and_Anchoring.pdf
 citation: 
