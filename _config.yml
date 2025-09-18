@@ -28,7 +28,7 @@ repository               : "ssm-econ/ssm-econ.github.io"
 author:
   # Biographic information (Sidebar)
   avatar           : "profile.png"
-  name             : "Shreeyesh Menon"
+  name             : ""
   bio              : "Economics PhD @ UT Austin"
   location         : "Austin, TX"
   email            : "shreeyeshmenon@gmail.com" 
