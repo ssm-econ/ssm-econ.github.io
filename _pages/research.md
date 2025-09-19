@@ -4,6 +4,7 @@ title: "Research"
 permalink: /research/
 author_profile: true
 ---
+
 [Research Statement](/files/Research Statement.pdf)
 
 {% if author.googlescholar %}
