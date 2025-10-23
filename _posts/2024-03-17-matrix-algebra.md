@@ -1,5 +1,5 @@
 ---
-title: 'Matrix Algebra: 4 perspectives'
+title: 'Linear Algebra: Four perspectives'
 date: 2024-03-17
 permalink: /posts/2024/03/matrixalgebra/
 excerpt: "A quick intro to linear algebra concepts"
@@ -7,7 +7,6 @@ tags:
   - linear algebra
   - geometry
 ---
-
 
 1.*Linear algebra is just mixing*
 
@@ -85,7 +84,7 @@ $$Lv_t=\begin{bmatrix} x_{t-1}\\ x_{t-2} \\ 0 \end{bmatrix}$$
 Hence, applying $L$ gives us a vector with lagged observations. One can obviously not construct a linear operator that recovers the original vector after being operated on by $L$, since all information about $x_t$ is just gone and cannot be recovered.
 
 
-3.*Matrices just rotate and stretch*
+3.*Matrices just rotate and stretch in space*
 
 A linear mapping is defined as one that maps a line in the domain space into another line in (possibly a different dimensional) range.
 
@@ -126,7 +125,7 @@ x_1 sin(\theta) + x_2 cos(\theta) \\
 
 Multiplying with sequence of Orthogonal and Diagonal matrices would amount to stretching and rotating matrices.
 
-4.*Matrix Algebra generalizes all linear operators*
+4.*Matrices generalize all linear operators*
 
 Consider the vector space (fancy way of saying the set) of all polynomials of degree $\le 5$.
 
