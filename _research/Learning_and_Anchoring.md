@@ -1,5 +1,5 @@
 ---
-title: "The Buoy and the Anchor: Evolving Beliefs and the Stability of Long-Run Expectations"
+title: "Keeping up with the Curve: Learning, Evolving Beliefs and the Anchoring of Expectations"
 category: research
 permalink: /research/Learning_and_Anchoring
 excerpt:
