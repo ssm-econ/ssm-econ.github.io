@@ -16,3 +16,4 @@ I have had the great opportunity to work with exemplary instructors and brillian
 5. Urban Economics *Instructor: Dr. Andrew Waxman* Spring 2022 [Evaluations](/files/TA Evals/Sp_2022.pdf)
 
 [Teaching Statement](/files/Teaching Statement.pdf)
+[Draft Sylalbus: Python and Data Science for Economics](/files/Draft Syllabus.pdf)
