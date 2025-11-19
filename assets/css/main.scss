@@ -63,19 +63,14 @@ $heading-line-height: 1.25;
 }
 
 
-/* Square avatar with fixed size */
-.author__avatar {
-  width: 360px;                 /* ← your desired square size */
-  height: 360px;
-  margin: 0 auto;               /* center in sidebar */
-}
+/* Bigger, uncropped avatar that respects sidebar width */
 .author__avatar img {
-  width: 200%;
-  height: 200%;
-  object-fit: cover;            /* fill the square, crop edges if not square */
-  object-position: center;      /* center the crop */
-  border-radius: 0;             /* 0 = square; try 12px for rounded square */
+  width: 180px;           /* pick 180–200 if you like */
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
   display: block;
+  margin: 0 auto;
 }
 
 /* Hide follow section, social icons, and any footer link lists */
