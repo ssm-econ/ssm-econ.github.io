@@ -70,8 +70,8 @@ $heading-line-height: 1.25;
   margin: 0 auto;               /* center in sidebar */
 }
 .author__avatar img {
-  width: 100%;
-  height: 100%;
+  width: 200%;
+  height: 200%;
   object-fit: cover;            /* fill the square, crop edges if not square */
   object-position: center;      /* center the crop */
   border-radius: 0;             /* 0 = square; try 12px for rounded square */
