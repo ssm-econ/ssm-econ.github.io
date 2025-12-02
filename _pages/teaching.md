@@ -15,5 +15,8 @@ I have had the great opportunity to work with exemplary instructors and brillian
 4. Energy Economics *Instructor: Michael Sadler*  Spring 2023 [Evaluations](/files/TA Evals/Sp_2023.pdf)
 5. Urban Economics *Instructor: Dr. Andrew Waxman* Spring 2022 [Evaluations](/files/TA Evals/Sp_2022.pdf)
 
+
 [Teaching Statement](/files/Teaching Statement.pdf)
+
+
 [Draft Sylalbus: Python and Data Science for Economics](/files/Draft Syllabus.pdf)
