@@ -20,3 +20,9 @@ I have had the great opportunity to work with exemplary instructors and brillian
 
 
 [Draft Sylalbus: Python and Data Science for Economics](/files/Draft Syllabus.pdf)
+
+
+[A list of free learning resources for students](/files/LearningResources.md)
+
+
+[Course Material: Data Science and Statistical Learning](https://github.com/ssm-econ/Data_Mining_Statistical_Learning)
