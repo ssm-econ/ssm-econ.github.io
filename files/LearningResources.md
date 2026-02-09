@@ -19,3 +19,7 @@
 -[Causal Econometrics - David Childers](https://donskerclass.github.io/CausalEconometrics)
 
 -[Intro to Statistical Learning - Hastie and others](https://www.statlearning.com)
+
+-[Mathematics for Numerical Computing and Machine Learning (Princeton)](https://www.cs.princeton.edu/courses/archive/spring20/cos302/)
+
+-[Missing Semester - MIT](https://missing.csail.mit.edu/past/)

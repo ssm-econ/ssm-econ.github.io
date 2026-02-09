@@ -1,5 +1,5 @@
 ---
-title: 'Filtering: The Basics'
+title: 'Statistical filtering: An overview'
 date: 2023-10-19
 permalink: /posts/2023/10/filtering/
 excerpt: "An introduction to filtering and sensor fusion"
@@ -11,7 +11,7 @@ tags:
   - state space methods
 ---
 
-# Filtering: Adding up information
+# Statistical filtering: How to add information
 
 Simply put, filtering means extracting information from a bunch of noisy signals. But the intuition behind it can be elusive. To illustrate the point, consider this problem.
 
@@ -89,21 +89,20 @@ the combined estimate $s_t$ is strictly less noisy than using either sensor alon
 
 2. **The weighted‐average formula is weight ∝ 1/variance.**
     - In the two‐sensor case,
-    $$
+  $$
     \alpha^* = \frac{\sigma_B^2}{\sigma_A^2 + \sigma_B^2}
     $$
     and, equivalently,
-    $$
+  $$
     \alpha^* = \frac{1/\sigma_A^2}{1/\sigma_A^2 + 1/\sigma_B^2}, \qquad 1-\alpha^* = \frac{1/\sigma_B^2}{1/\sigma_A^2 + 1/\sigma_B^2}
     $$
     - Each sensor’s weight is its “precision” ($1/\sigma^2$) divided by the sum of all precisions.
 
 3. **Generalization to $n$ sensors.**
     - With $n$ independent measurements,
-    $$
-    \hat x_t = \frac{\sum_{i=1}^n \frac{1}{\sigma_i^2} s_t^{(i)}}{\sum_{i=1}^n \frac{1}{\sigma_i^2}}, \qquad
-    \operatorname{Var}(\hat x_t) = \frac{1}{\sum_{i=1}^n 1/\sigma_i^2} < \min_i \sigma_i^2.
-    $$
+$$\hat x_t = \frac{\sum_{i=1}^n \frac{1}{\sigma_i^2} s_t^{(i)}}{\sum_{i=1}^n \frac{1}{\sigma_i^2}}, \qquad
+    \operatorname{Var}(\hat x_t) = \frac{1}{\sum_{i=1}^n 1/\sigma_i^2} < \min_i \sigma_i^2.    
+$$
     - Whenever $\sigma_i^2 < \infty$ and errors are independent, adding that measurement strictly lowers overall variance.
 
 ---
@@ -147,7 +146,9 @@ $$
 K_t = \frac{P_{t|t-1}}{P_{t|t-1} + R_\text{agg}}
 $$
 - State/covariance update:
-$$\hat x_{t|t} = \hat x_{t|t-1} + K_t (\bar s_t - \hat x_{t|t-1}), \qquad P_{t|t} = (1 - K_t) P_{t|t-1}$$
+$$
+\hat x_{t|t} = \hat x_{t|t-1} + K_t (\bar s_t - \hat x_{t|t-1}), \qquad P_{t|t} = (1 - K_t) P_{t|t-1}
+$$
 ---
 
 ## 3. Why Even a Noisy Sensor Helps
@@ -160,9 +161,11 @@ $$\hat x_{t|t} = \hat x_{t|t-1} + K_t (\bar s_t - \hat x_{t|t-1}), \qquad P_{t|t
 
 - **Nonlinear, non-Gaussian:** As long as information is independent, combining measurements tightens posteriors (even if the formulas become more complex).
 - **Many sensors:** Generalize by summing precisions. Variance is always
-    $$
+$$
     \operatorname{Var}(\hat x_t) = \left( \sum_{i=1}^n 1/\sigma_i^2 \right)^{-1}
-    $$
+$$
 - **Observability:** Even a high-variance sensor may be essential if it sees a component of the state other sensors cannot. This could be a case where each signal is informative about a different part of the system.
+
+.
 
 
