@@ -19,10 +19,8 @@ I have had the great opportunity to work with exemplary instructors and brillian
 [Teaching Statement](/files/Teaching Statement.pdf)
 
 
-[Draft Sylalbus: Python and Data Science for Economics](/files/Draft Syllabus.pdf)
-
-
-[A list of free learning resources for students](/_pages/LearningResources.md)
-
+[Syllabus: Python and Data Science for Economics](/files/Syllabus - Data Science for Economists.pdf)
 
 [Course Material: Data Science and Statistical Learning](https://github.com/ssm-econ/Data_Mining_Statistical_Learning)
+
+[Syllabus: Principles of Macroeconomics](/files/Syllabus - Principles of Macroeconomics.pdf)
