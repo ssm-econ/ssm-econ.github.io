@@ -22,6 +22,13 @@ $navicon-link-color-hover: darken(#4a6fa5, 15%);
   align-items: center;
 }
 
+.author__tagline {
+  font-size: 0.78rem;
+  color: #888;
+  margin-top: 2px;
+  font-style: italic;
+}
+
 /* Hide follow section, social icons, and any footer link lists */
 .page__footer-follow,
 .page__footer .social-icons,
