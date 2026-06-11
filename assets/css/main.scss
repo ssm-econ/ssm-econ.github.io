@@ -1,30 +1,137 @@
-/* Sidebar author links */
-.author__urls {
-  li {
-    padding: 6px 0;        /* vertical spacing between links */
-    line-height: 1.5;
-  }
+@@ -1,116 +1,30 @@
+---
+---
+@charset "utf-8";
 
-  a {
-    display: flex;
-    align-items: center;
-    gap: 10px;             /* space between icon and text */
-    text-decoration: none;
-
-    &:hover {
-      text-decoration: underline;
-    }
-  }
-
-  .svg-inline--fa,
-  i {
-    width: 20px;           /* fixed icon width so text aligns cleanly */
-    text-align: center;
-    flex-shrink: 0;
-  }
+/* Charter faces */
+@font-face{
+  font-family:"Charter Web";
+  src:local("Charter"), local("Charter Roman"),
+      url("/assets/fonts/charter-regular.woff2") format("woff2");
+  font-weight:400; font-style:normal; font-display:swap;
+}
+@font-face{
+  font-family:"Charter Web";
+  src:local("Charter Italic"), local("Charter-Italic"),
+      url("/assets/fonts/charter-italic.woff2") format("woff2");
+  font-weight:400; font-style:italic; font-display:swap;
+}
+@font-face{
+  font-family:"Charter Web";
+  src:local("Charter Bold"), local("Charter-Bold"),
+      url("/assets/fonts/charter-bold.woff2") format("woff2");
+  font-weight:700; font-style:bold; font-display:swap;
 }
 
-/* Spacing above the links block */
-.author__urls-wrapper {
-  margin-top: 12px;
+
+/* === Typography variables (one source of truth) === */
+$charter-stack: "Charter Web", "Charter", "Bitstream Charter", "Charis SIL", Georgia, serif;
+$serif:              $charter-stack;
+$sans-serif:         $charter-stack;
+$sans-serif-narrow:  $charter-stack;
+$header-font-family: $charter-stack;
+$global-font-family: $charter-stack;
+$caption-font-family:$charter-stack;
+$code-font-family: Menlo, Consolas, Monaco, "Courier New", monospace;
+
+$type-size-1: 2.5rem;   // H1 ~40px
+$type-size-2: 2rem;     // H2 ~32px
+$type-size-3: 1.625rem; // H3 ~26px
+$type-size-4: 1.375rem; // H4 ~22px
+$type-size-5: 1.25rem;  // ~20px
+$type-size-6: 1.125rem; // body ~18px
+$type-size-7: 1rem;
+$type-size-8: .9375rem;
+$type-size-9: .875rem;
+
+$body-line-height: 1.7;
+$heading-line-height: 1.25;
+
+/* Load skin then theme (Liquid injects the skin name) */
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
+
+@import "vendor/font-awesome/brands";
+
+/* Hide the sidebar’s scrollbar (keeps content visible if it fits) */
+.sidebar {
+  overflow-y: auto;              /* allow scrolling if needed */
+  -ms-overflow-style: none;      /* IE/Edge legacy */
+  scrollbar-width: none;         /* Firefox */
+}
+.sidebar::-webkit-scrollbar {     /* Chrome/Safari */
+  display: none;
+}
+
+
+/* Bigger, uncropped avatar that respects sidebar width */
+.author__avatar img {
+  width: 180px;           /* pick 180–200 if you like */
+  max-width: 100%;
+  height: auto;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+}
+
+/* Hide follow section, social icons, and any footer link lists */
+.page__footer-follow,
+.page__footer .social-icons,
+.footer__links,
+.footer__col { display: none !important; }
+
+/* Keep just the copyright centered */
+.page__footer { text-align: center; }
+
+
+/* Only make it larger on big screens */
+@media (min-width: 1200px) {
+  .author__avatar img { width: 200px; }
+}
+/* A bit smaller on phones */
+@media (max-width: 600px) {
+  .author__avatar img { width: 140px; }
+}
+
+
+/* Never show the overflow dropdown; let links wrap instead */
+.masthead .greedy-nav .hidden-links { display: none !important; }
+.masthead .greedy-nav .visible-links { flex-wrap: wrap; }
+.masthead .greedy-nav { overflow: visible; }
+
+
+/* Protect math from global fonts (if using MathJax/KaTeX) */
+.mjx-container, .mjx-container * { font-family: unset !important; }
+/* .katex, .katex * { font-family: unset !important; }  // use if you switched to KaTeX */
+
+.sidebar .author__urls li { /* Location info */
+  font-size: 0.82rem; 
+}
+
+.sidebar .author__urls a { 
+  font-size: 0.82rem; 
+}
+
+.sidebar .author__urls i { 
+  font-size: 0.82rem; 
+}
+
+
+/* Sidebar author links — spacing & alignment */
+.author__urls li {
+  padding: 6px 0;
+  line-height: 1.5;
+}
+
+.author__urls a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.author__urls i,
+.author__urls .svg-inline--fa {
+  width: 16px;
+  text-align: center;
+  flex-shrink: 0;
 }

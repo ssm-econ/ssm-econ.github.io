@@ -10,7 +10,7 @@ redirect_from:
 
 ## About
 
-I received my Ph.D. in Economics from the University of Texas at Austin in May 2026, where I was advised by [Saroj Bhattarai](https://sites.google.com/site/bhattaraisaroj/) and [Olivier Coibion](https://sites.utexas.edu/ocoibion/). I study how economic agents acquire information from their environment and how their learning behavior contributes to macroeconomic dynamics.
+I received my Ph.D. in Economics from the University of Texas at Austin in May 2026, where I was advised by [Saroj Bhattarai](https://sites.google.com/site/bhattaraisaroj/) and [Olivier Coibion](https://sites.google.com/site/ocoibion/). I study how economic agents acquire information from their environment and how their learning behavior contributes to macroeconomic dynamics.
 
 I am currently a Postdoctoral Researcher at Central European University in Vienna, working with Prof. [Robert Lieli](https://people.ceu.edu/robert_lieli). In Fall 2027, I will join the University of Otago as an Assistant Professor (Lecturer).
 
