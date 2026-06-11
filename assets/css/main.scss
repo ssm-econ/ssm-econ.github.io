@@ -86,8 +86,9 @@ $heading-line-height: 1.25;
 
 /* Only make it larger on big screens */
 @media (min-width: 1200px) {
-  .author__avatar img { width: 200px; }
+  .author__avatar img { width: 230px; }
 }
+
 /* A bit smaller on phones */
 @media (max-width: 600px) {
   .author__avatar img { width: 140px; }
