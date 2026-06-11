@@ -14,10 +14,10 @@ plugins:
 
 
 locale                   : "en-US"
-title                    : ""
+title                    : "Shreeyesh Menon"
 title_separator          : "-"
-name                     : &name ""
-description              : &description "Ph.D. Economics, UT Austin 2026"
+name                     : &name "Shreeyesh Menon"
+description              : &description "Macroeconomics | Learning | Monetary Policy"
 url                      : https://ssm-econ.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "ssm-econ/ssm-econ.github.io"
