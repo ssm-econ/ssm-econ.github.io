@@ -1,5 +1,11 @@
 ---
 ---
+
+@import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
+@import "minimal-mistakes";
+
+@import "vendor/font-awesome/brands";
+
 .author__avatar img {
   width: 180px;           /* pick 180–200 if you like */
   max-width: 100%;
