@@ -1,14 +1,21 @@
 ---
 title: "Monetary Policy as Decentralized Control: Near-optimality of Quantized Policy Rules"
-category: research
+collection: research
 permalink: /research/Decentralized_Policy
 excerpt:
 date: 2025-02-11
-venue: 
+venue:
 paperurl:
-citation: 
+citation:
 ---
 
-This paper studies macroeconomic stabilization as a cooperative game: the central bank and private agents share the common goal of stabilizing the output around potential but act under different information. Policymakers observe private signals about changes in the natural rate of interest that households and firms either lack or find costly to monitor; however, interest rate adjustments are costly making it infeasible to offset them completely. Private agents adjust inflation expectations based on noisy observations on the *output gap*. Importantly, central bank policy influences private sector's information by altering aggregate demand and serves as an implicit communication channel, informing them about fundamental shocks allowing for indirect stabilization through adjustment of inflation expectations. This paper draws an analogy of the problem to *Witsenhausen’s counterexample*, a canonical problem in decentralized control theory, where optimal strategies are inherently non-linear. The analysis shows that quantized policy rules—such as adjusting interest rates in discrete steps—can outperform linear feedback rules like the Taylor rule.
+<span style="background:#6c757d; color:white; font-size:0.72em; padding:2px 8px; border-radius:3px;">Working Paper</span>
 
-[Download PDF](fhttp://ssm-econ.github.io/files/Decentralized_Policy.pdf){: .btn .btn--primary}
+<details>
+<summary style="cursor:pointer; color:#2a7ae2; margin: 10px 0;">Abstract</summary>
+<p style="margin-top:10px;">
+This paper studies macroeconomic stabilization as a cooperative game: the central bank and private agents share the common goal of stabilizing the output around potential but act under different information. Policymakers observe private signals about changes in the natural rate of interest that households and firms either lack or find costly to monitor; however, interest rate adjustments are costly making it infeasible to offset them completely. Private agents adjust inflation expectations based on noisy observations on the <em>output gap</em>. Importantly, central bank policy influences private sector's information by altering aggregate demand and serves as an implicit communication channel, informing them about fundamental shocks allowing for indirect stabilization through adjustment of inflation expectations. This paper draws an analogy of the problem to <em>Witsenhausen's counterexample</em>, a canonical problem in decentralized control theory, where optimal strategies are inherently non-linear. The analysis shows that quantized policy rules—such as adjusting interest rates in discrete steps—can outperform linear feedback rules like the Taylor rule.
+</p>
+</details>
+
+[Download PDF](http://ssm-econ.github.io/files/Decentralized_Policy.pdf){: .btn .btn--primary}
