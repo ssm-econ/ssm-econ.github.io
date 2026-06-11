@@ -1,6 +1,12 @@
 ---
 ---
 
+/* Accent color overrides */
+$link-color: #4a6fa5;
+$masthead-link-color: #4a6fa5;
+$masthead-link-color-hover: darken(#4a6fa5, 15%);
+$navicon-link-color-hover: darken(#4a6fa5, 15%);
+
 @import "minimal-mistakes/skins/{{ site.minimal_mistakes_skin | default: 'default' }}";
 @import "minimal-mistakes";
 
