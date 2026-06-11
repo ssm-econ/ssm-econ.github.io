@@ -14,7 +14,7 @@ plugins:
 
 
 locale                   : "en-US"
-title                    : "Personal Website"
+title                    : ""
 title_separator          : "-"
 name                     : &name ""
 description              : &description "Ph.D. Economics, UT Austin 2026"
