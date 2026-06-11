@@ -66,12 +66,20 @@ $heading-line-height: 1.25;
 
 /* Bigger, uncropped avatar that respects sidebar width */
 .author__avatar img {
-  width: 210px;           /* pick 180–200 if you like */
-  max-width: 100%;
-  height: auto;
+  width: 210px !important;
+  max-width: 100% !important;
+  height: auto !important;
   border-radius: 50%;
   display: block;
   margin: 0 auto;
+}
+
+@media (min-width: 1200px) {
+  .author__avatar img { width: 230px !important; }
+}
+
+@media (max-width: 600px) {
+  .author__avatar img { width: 140px !important; }
 }
 
 /* Hide follow section, social icons, and any footer link lists */
@@ -82,17 +90,6 @@ $heading-line-height: 1.25;
 
 /* Keep just the copyright centered */
 .page__footer { text-align: center; }
-
-
-/* Only make it larger on big screens */
-@media (min-width: 1200px) {
-  .author__avatar img { width: 230px; }
-}
-
-/* A bit smaller on phones */
-@media (max-width: 600px) {
-  .author__avatar img { width: 140px; }
-}
 
 
 /* Never show the overflow dropdown; let links wrap instead */
