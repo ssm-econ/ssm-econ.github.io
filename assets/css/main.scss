@@ -106,22 +106,12 @@ $heading-line-height: 1.25;
 
 .sidebar .author__urls li { /* Location info */
   font-size: 0.82rem; 
-  padding: 6px 0;
-  line-height: 1.5;
 }
 
 .sidebar .author__urls a { 
   font-size: 0.82rem;
-  display: flex;
-  align-items: center;
-  gap: 10px; 
 }
 
 .sidebar .author__urls i { 
   font-size: 0.82rem; 
-}
-.author__urls .svg-inline--fa {
-  width: 16px;
-  text-align: center;
-  flex-shrink: 0;
 }
