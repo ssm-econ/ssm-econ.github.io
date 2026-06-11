@@ -14,6 +14,10 @@ I received my Ph.D. in Economics from the University of Texas at Austin in May 2
 
 I am currently a Postdoctoral Researcher at Central European University in Vienna, working with Prof. [Robert Lieli](https://people.ceu.edu/robert_lieli). In Fall 2027, I will join the University of Otago as an Assistant Professor (Lecturer).
 
+[Research Statement](files/Research Statement.pdf){: .btn .btn--primary}
+&nbsp;
+[Teaching Statement](files/Teaching Statement.pdf){: .btn .btn--inverse}
+
 ---
 
 ## Selected Research
@@ -25,8 +29,7 @@ I explain the behavior of inflation, unemployment, and long-run inflation expect
 
 [Download PDF](files/Learning_and_Anchoring.pdf){: .btn .btn--primary}
 &nbsp;
-[Research Statement](files/Research Statement.pdf){: .btn .btn--inverse}
 
 ---
 
-[View all research →](research/)
+[View other research →](research/)
