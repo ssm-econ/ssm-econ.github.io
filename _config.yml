@@ -30,7 +30,7 @@ author:
   avatar           : "profile.png"
   name             : "Shreeyesh Menon"
   bio              : ""
-  location         : "Austin, TX"
+  #location         : "Austin, TX"
   email            : "shreeyeshmenon@gmail.com" 
 
   github           : "ssm-econ"
