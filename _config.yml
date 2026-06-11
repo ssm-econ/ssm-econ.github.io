@@ -27,7 +27,7 @@ repository               : "ssm-econ/ssm-econ.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information (Sidebar)
-  avatar           : "/images/profile.png"
+  avatar           : "profile.png"
   name             : "Shreeyesh Menon"
   bio              : "Macroeconomics"
   #location         : "Austin, TX"
