@@ -14,7 +14,7 @@ Monte Carlo methods are a broad class of computational algorithms that rely on r
 
 *Measurement by rolling dice...*
 
-The algorithms have proven extremely useful for situations where solutions to problems are desired but the problems are analytically intractable. If we have access to a randomizing device that can generate samples from a random distribution, we can often arrive at excellent estimates. Their true power is apparent when we use them in conjunction with Markov Chains utilising the powerful mathematical theory developed for them in order to simulate data.
+The algorithms have proven extremely useful for situations where solutions to problems are desired but the problems are analytically intractable. If we have access to a randomizing device that can generate samples from a random distribution, we can often arrive at excellent estimates. Their true power is apparent when we use them in conjunction with Markov Chains utilising their powerful properties to the effec
 
 ## From integrals to expectations
 

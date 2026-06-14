@@ -8,7 +8,7 @@ tags:
   - stochastic processes
 ---
 
-# Markov Chains — A Gentle Introduction
+# Markov Chains
 
 > **Goal.** By the end, you should be able to define a (discrete-time) Markov chain, read and build a transition matrix, forecast with powers of that matrix, and explain when/why long-run behavior stabilizes.
 
@@ -16,19 +16,11 @@ tags:
 
 ---
 
-### What problem do Markov chains solve?
+### What is a Markov Process?
 Many systems evolve step-by-step: today → tomorrow, minute $t$ → minute $t+1$. A **Markov chain** models such a system when the distribution of the next step depends **only** on the present state, not on the full history. This is the **Markov property**.
 
-**Analogies you already know**
-- **Weather:** If we only care about *Sunny* vs *Rainy*, tomorrow depends mostly on today.
-- **Web browsing:** Your next page depends on the page you’re on.
-- **Shopping loyalty:** Brand next month depends on the brand this month.
-
-These are not laws of nature; they’re **useful approximations**—and useful approximations are where Markov chains shine.
-
 ---
-
-## Formal setup
+## Formal setup: Discrete Markov Chains
 - **Time:** discrete steps $t=0,1,2,\dots$
 - **States:** a set $S$ (finite or countable), e.g. $\{1,2,\dots,n\}$ or $\{\text{Sunny},\text{Rainy}\}$
 - **Random variables:** $X_t\in S$ is the state at time $t$
@@ -47,7 +39,7 @@ We’ll use **row-stochastic** convention: rows sum to 1. If $s^{(t)}$ is the **
 $$
 \boxed{s^{(t+1)} = s^{(t)}P}\qquad\text{and}\qquad s^{(t)}=s^{(0)}P^t.
 $$
-> *Pedantry that pays off:* If you prefer column vectors, transpose everything consistently. Mixing conventions causes errors.
+> *Pedantics:* If you prefer column vectors, transpose everything consistently. Mixing conventions causes errors.
 
 **Chapman–Kolmogorov:** $P^{t+s}=P^tP^s$ and $(P^t)_{ij}=\Pr(X_t=j\mid X_0=i)$.
 
@@ -70,11 +62,11 @@ $$
 $$
 With $\pi_1+\pi_2=1$, solve to get $\pi=(4/7,\;3/7)\approx(0.5714,\;0.4286)$.
 
-Interpretation: in the long run ~57% of days are Sunny and ~43% Rainy, regardless of the starting day (under mild conditions explained below).
+Interpretation: in the long run ~57% of days are Sunny and ~43% Rainy, regardless of the starting day.
 
 ---
 
-## Long-run behavior: when do we converge?
+## Long-run behavior: Do we converge?
 For finite chains, three properties are central:
 - **Irreducible:** from every state you can eventually reach every other state with positive probability.
 - **Aperiodic:** the chain doesn’t get trapped in a deterministic cycle (formally, each state has period 1).
@@ -84,16 +76,14 @@ For finite chains, three properties are central:
   $$
   where $\pi$ is the unique stationary distribution.
 
-**Why care?** It means the system “forgets” its starting point and settles into a stable mix of time spent in each state.
+If these conditions are satisfied, it means that the system “forgets” its starting point and settles into a stable mix of time spent in each state.
 
 ---
 
-## Classifying states (bare essentials)
+## Classifying states
 - **Absorbing:** $i$ is absorbing if $P_{ii}=1$. Once you enter, you never leave.
 - **Transient vs. recurrent:** Starting from $i$, if the probability of ever returning to $i$ is $<1$, it’s **transient**; if it’s $1$, it’s **recurrent**. In any finite irreducible chain, all states are recurrent.
 - **Communicating classes:** states partition into classes that can reach each other. A chain is **irreducible** iff there is a single communicating class.
-
-> *Practical check:* If $P$ has an absorbing state, there can’t be a unique stationary distribution that attracts all starts; probability mass can get stuck.
 
 ---
 
@@ -113,13 +103,5 @@ For finite chains, three properties are central:
 - **Board games:** State = square plus any special flags (e.g., “in jail”). Dice make transitions depend only on the current state once you model the rules properly.
 - **Random surfer (PageRank):** State = webpage. Transition probabilities follow links plus occasional random jumps; $\pi$ ranks pages by long-run visit rate.
 - **Credit ratings:** State = $\{\mathrm{AAA},\mathrm{AA},\mathrm{A},\dots,\mathrm{D}\}$. $P$ captures annual upgrade/downgrade/default probabilities.
-
----
-
-### Pitfalls in applications (and how to dodge them)
-- **Convention confusion:** Decide row-vs-column once. Here we use row vectors; rows of $P$ sum to 1; $s^{(t+1)}=s^{(t)}P$.
-- **Time-homogeneity assumption:** If dynamics change (e.g., seasonality), either let $P$ depend on $t$ or add “season” to the state.
-- **Hidden memory:** If the current state doesn’t capture key context (e.g., pressure/humidity for weather), expand the state definition.
-- **Convergence myths:** Not all chains converge from every start; check irreducibility and aperiodicity.
 
 ---

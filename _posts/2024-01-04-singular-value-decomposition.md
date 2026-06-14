@@ -9,25 +9,24 @@ tags:
   - dimensionality reduction
 ---
 
-# Singular Value Decomposition: An intuitive look
-
 The Singular Vector Decomposition is perhaps the most widely applied techniques from linear algebra. But perhaps its name makes it look quite intimidating and unintuitive. In this post, I build the bridge from the well-known Pythagoras theorem all the way to de-mystifying SVD.
 
 ## Big picture 
-From our linear algebra class we know that breaking a vector into perpendicular components makes life much easier. The Singular Vector Decomposition breaks a matrix into "perpendicular" rank-1 (read on to find out what this means) matrices. 
+From our linear algebra class we know that breaking a vector into perpendicular *components* can make some computations easier. But what if we could apply the same idea to matrices? Can we project matrices along 
 
-## Vectors: why Pythagoras shows up
-Take an orthonormal basis $$\{\mathbf{e}_1,\dots,\mathbf{e}_n\}$$. Any vector $\mathbf{v}$ can be written as
+## Vectors: A generalized Pythagoras theorem
+Take an orthonormal basis $$\{\mathbf{e}_1,\dots,\mathbf{e}_n\}$$. Any vector $\mathbf{v}$ can be written as a sum of its perpendicular components:
+
 $$
 \mathbf{v}=\sum_{i=1}^n \langle \mathbf{v},\mathbf{e}_i\rangle \mathbf{e}_i,
 $$
-and the squared length splits cleanly:
+and the squared length is the sum of the squared lengths of each component:
 $$
 \|\mathbf{v}\|^2=\sum_{i=1}^n \big|\langle \mathbf{v},\mathbf{e}_i\rangle\big|^2.
 $$
-Those coordinates are “orthogonal directions”. This is equivalent to taking a vector and dropping projections along some orthogonal directions and adding them up. These represent the "shadows" of the vector. Any $n$ dimensional vector is defined by the shadow it casts in any $n$ orthogonal directions.
+Any $n$ dimensional vector is uniquely defined by its various components along $$\{\mathbf{e}_1,\dots,\mathbf{e}_n\}$$.
 
-## Matrices as “machines”
+## Matrices as input-output machines
 A matrix $A$ takes inputs in $\mathbb{R}^n$ and spits out outputs in $\mathbb{R}^m$. SVD finds:
 - orthonormal **input directions** $\mathbf{v}_1,\dots,\mathbf{v}_r$ in $\mathbb{R}^n$,
 - orthonormal **output directions** $\mathbf{u}_1,\dots,\mathbf{u}_r$ in $\mathbb{R}^m$,
@@ -117,4 +116,6 @@ Truncating to \(k=1\) keeps only $$\begin{bmatrix}3&0\\0&0
 
 
 ## Takeaway
-SVD is “Pythagoras for matrices.” It expresses $A$ as a sum of orthogonal, rank-1 patterns whose energies add up cleanly. That’s why SVD is the go-to tool for compression, denoising, and understanding what a matrix really does, providing a better description of the stretching and rotations that a matrix performs.
+SVD is the go-to tool for compression and denoising. Principal Component Analysis (PCA) is a popular technique in unsupervised machine learning, used to form low-dimensional approximations to large matrices. PCA is also used in the analysis of financial/macro time series. These models are called factor models.
+
+
