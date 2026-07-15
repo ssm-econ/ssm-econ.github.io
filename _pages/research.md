@@ -11,6 +11,12 @@ author_profile: true
 
 {% include base_path %}
 
-{% for post in site.research reversed %}
-  {% include archive-single.html %}
+<div class="research-list">
+{% assign sorted_research = site.research | sort: 'date' | reverse %}
+{% for post in sorted_research %}
+  <div class="research-entry">
+    <h3 class="research-title"><a href="{{ post.url }}">{{ post.title }}</a></h3>
+    {{ post.content }}
+  </div>
 {% endfor %}
+</div>

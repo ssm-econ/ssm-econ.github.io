@@ -153,3 +153,32 @@ $navicon-link-color-hover: darken(#4a6fa5, 15%);
   font-size: 0.75rem;
   color: #aaa;
 }
+
+/* Research list */
+.research-list {
+  margin-top: 1.5rem;
+}
+
+.research-entry {
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #f0f0f0;
+
+  &:last-child {
+    border-bottom: none;
+  }
+}
+
+.research-title {
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+
+  a {
+    color: #4a6fa5;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
