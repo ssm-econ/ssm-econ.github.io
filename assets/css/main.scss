@@ -182,3 +182,53 @@ $navicon-link-color-hover: darken(#4a6fa5, 15%);
     }
   }
 }
+
+/* Research entry meta row */
+.research-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.research-badge {
+  font-size: 0.72em;
+  color: white;
+  background: #4a6fa5;
+  padding: 2px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+
+.research-badge--jmp {
+  background: #4a6fa5;
+}
+
+.research-badge--working {
+  background: #4a6fa5;
+}
+
+.research-pdf {
+  font-size: 0.78em;
+  color: #4a6fa5;
+  border: 1px solid #4a6fa5;
+  padding: 2px 8px;
+  border-radius: 3px;
+  text-decoration: none;
+  white-space: nowrap;
+
+  &:hover {
+    background: #4a6fa5;
+    color: white;
+  }
+}
+
+.research-abstract summary {
+  cursor: pointer;
+  color: #4a6fa5;
+  margin: 6px 0;
+}
+
+.research-abstract p {
+  margin-top: 8px;
+}
